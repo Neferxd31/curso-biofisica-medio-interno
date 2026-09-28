@@ -386,6 +386,7 @@
     let dots = [];
     let phase = 'idle';
     let t0 = 0;
+    let finishTimer = 0;
 
     function layout(w, h) {
       const pad = 10;
@@ -479,6 +480,9 @@
       t0 = performance.now();
       document.getElementById('t-out').innerHTML = '';
       document.getElementById('t-verdict').innerHTML = 'Mezclando… el trazador difunde desde el plasma.';
+      // Timer, not the animation loop: the result must appear even if the canvas scrolls out of view.
+      clearTimeout(finishTimer);
+      finishTimer = setTimeout(() => { phase = 'done'; finish(); }, 2800);
     }
 
     function finish() {
@@ -498,20 +502,17 @@
       dots.forEach(d => {
         const k = Math.min(1, Math.max(0, (t - d.delay) / 2.2));
         const e = 1 - Math.pow(1 - k, 3);
-        d.x =d.sx + (d.tx - d.sx) * e + (Math.random() - 0.5) * 1.2;
+        d.x = d.sx + (d.tx - d.sx) * e + (Math.random() - 0.5) * 1.2;
         d.y = d.sy + (d.ty - d.sy) * e + (Math.random() - 0.5) * 1.2;
       });
       render();
-      if (phase === 'mixing' && t > 2.8) {
-        phase = 'done';
-        finish();
-      }
     }
 
     setupCanvas(canvas, 0.38, draw, 220);
     visibleLoop(canvas, step);
     document.getElementById('t-inject').addEventListener('click', inject);
     document.getElementById('t-reset').addEventListener('click', () => {
+      clearTimeout(finishTimer);
       dots = [];
       phase = 'idle';
       render();

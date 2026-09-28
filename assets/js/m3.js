@@ -437,7 +437,7 @@
         text = `<b>${R[resp][0].toUpperCase() + R[resp].slice(1)} pura</b>: típica de la fase <b>aguda</b>. El riñón aún no ha compensado (12–48 h) y el punto está sobre la RNE.`;
       } else if (met && !resp) {
         text = `<b>${Mt[met][0].toUpperCase() + Mt[met].slice(1)} pura</b> (P<sub>CO₂</sub> normal): falta la compensación respiratoria.`;
-        if (met === 'acid') text += ' Como la compensación respiratoria de la acidosis metabólica es inmediata, sospecha un <b>problema respiratorio asociado</b> (trastorno complejo).';
+        if (met === 'acid' && pH <= 7.0) text += ' Como la compensación respiratoria de la acidosis metabólica es inmediata, sospecha un <b>problema respiratorio asociado</b> (trastorno complejo).';
       } else if (resp === met) {
         text = `<b>Trastorno mixto: ${resp === 'acid' ? 'acidosis' : 'alcalosis'} mixta</b> (${R[resp]} + ${Mt[met]}). El pH se desvía mucho; ejemplo: ${resp === 'acid' ? 'parada cardiorrespiratoria (hipoventilación + acidosis láctica)' : 'vómitos + hiperventilación'}.`;
       } else {
@@ -450,7 +450,8 @@
           text = `<b>${Mt[met][0].toUpperCase() + Mt[met].slice(1)} parcialmente compensada</b> por el pulmón (${R[resp]} compensadora).`;
         }
       }
-      if (met === 'acid' && resp !== 'acid' && pH < 7.42 && pH > 7.0) {
+      // The decimals rule describes the expected response to acidemia; with a normal pH the disorder is simply fully compensated.
+      if (met === 'acid' && resp !== 'acid' && pH < 7.38 && pH > 7.0) {
         const expected = 100 * (pH - 7);
         const diff = P - expected;
         if (Math.abs(diff) <= 3) text += ` P<sub>CO₂</sub> ≈ ${fmt(expected, 0)} esperada (regla de los decimales): <b>compensación adecuada → simple</b>.`;
@@ -467,7 +468,7 @@
         stat('P<sub>CO₂</sub>', fmt(state.P, 1), 'mmHg') +
         stat('[CO₂d]', fmt(0.03 * state.P, 2), 'mmol/L') +
         stat('[H⁺]', fmt(Math.pow(10, 9 - pH), 0), 'nmol/L') +
-        stat('Exceso ác. fijos', `${state.exc > 0 ? '+' : ''}${fmt(state.exc, 1)}`, `mmol/L · BE ${fmt(-state.exc, 1)}`);
+        stat('Exceso ác. fijos', `${state.exc > 0.05 ? '+' : ''}${fmt(Number(state.exc.toFixed(1)) || 0, 1)}`, `mmol/L · BE ${fmt(Number((-state.exc).toFixed(1)) || 0, 1)}`);
       document.getElementById('dav-verdict').innerHTML = classify(pH, state.P, state.exc);
     }
 

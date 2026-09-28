@@ -51,15 +51,15 @@ window.QUIZ.m2 = [
   },
   {
     t: '2.2',
-    q: 'Un déficit hídrico puro (deshidratación celular) ¿modifica la volemia efectiva?',
+    q: 'Según el modelo del libro, una variación de la hidratación CELULAR (con la hidratación extracelular mantenida) ¿modifica la volemia efectiva?',
     o: [
-      'Sí, la disminuye, porque los eritrocitos pierden volumen.',
-      'No, porque un cambio de volumen de las células sanguíneas se compensa con un cambio opuesto del plasma y el volumen sanguíneo total no varía.',
-      'Sí, la aumenta, porque el agua sale de las células hacia el plasma.',
+      'Sí, la disminuye si hay deshidratación celular, porque los eritrocitos pierden volumen.',
+      'No: un cambio de volumen de las células sanguíneas se hace a costa del plasma y el volumen sanguíneo total no varía.',
+      'Sí, la aumenta si hay deshidratación celular, porque el agua sale de las células hacia el plasma.',
       'Solo si la natremia supera los 160 mmol/L.'
     ],
     a: 1,
-    e: 'Según el modelo, las variaciones de la hidratación celular no influyen en la volemia efectiva: el volumen de las células sanguíneas solo cambia a expensas del volumen plasmático. Por eso el bucle del sodio no "ve" los trastornos del balance hídrico.'
+    e: 'Las variaciones de la hidratación celular no influyen en la volemia efectiva: el volumen de las células sanguíneas solo cambia a expensas del volumen plasmático, y el volumen sanguíneo total se mantiene. Por eso, en un trastorno primario del balance hídrico ya adaptado (extracelular normal), el bucle del sodio no detecta nada.'
   },
   {
     t: '2.3',

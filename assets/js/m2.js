@@ -7,7 +7,9 @@
     return `<div class="stat"><div class="k">${k}</div><div class="v">${v} <span class="u">${u || ''}</span></div></div>`;
   }
   function signed(v, d) {
-    return (v > 0 ? '+' : '') + fmt(v, d);
+    // Round first so tiny float residues never print as "+0,0" or "-0,0".
+    const r = Number(v.toFixed(d)) || 0;
+    return (r > 0 ? '+' : '') + fmt(r, d);
   }
 
   /* ------------------------------------------------------------ 2.4 classifier */
