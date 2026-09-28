@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equilibrio Agua y Sodio</title>
+  <meta name="description" content="Módulo 2: hidratación celular y extracelular, volemia y osmolalidad efectivas, natremia, relación de Edelman, diagrama de Pitts y trastornos hidrosódicos.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script defer src="assets/js/core.js"></script>
+  <script defer src="assets/js/quiz-m2.js"></script>
+  <script defer src="assets/js/m2.js"></script>
+</head>
+<body class="m2" data-module="m2">
+  <header class="topbar">
+    <button class="icon-btn menu-btn" type="button" aria-label="Abrir índice">☰</button>
+    <a class="brand" href="index.html"><span class="brand-logo">Bф</span></a>
+    <span class="crumb">Módulo 2 · Equilibrio del agua y del sodio</span>
+    <span class="spacer"></span>
+    <button class="icon-btn" data-theme-toggle type="button">☾</button>
+    <span class="progress-top"></span>
+  </header>
+  <div class="scrim"></div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h4>Módulo 2</h4>
+      <div class="side-progress">
+        <div class="bar"><span></span></div>
+        <div class="lbl"><span>Leído: <b class="pct">0%</b></span><span class="best"></span></div>
+      </div>
+      <ul class="toc"></ul>
+      <div class="side-nav">
+        <a href="modulo-1.html">← Módulo 1: compartimientos</a>
+        <a href="modulo-3.html">Módulo 3: ácido-base →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="content-inner">
+
+        <div class="mod-hero">
+          <svg class="deco" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="10" stroke-dasharray="40 14"/></svg>
+          <div class="eyebrow">Módulo 2</div>
+          <h1>Equilibrio del agua y del sodio</h1>
+          <p class="lead">Los riñones mantienen el balance del agua y el del sodio mediante dos bucles de regulación casi independientes. Entenderlos permite leer una natremia y una exploración física y deducir qué balance está alterado y cómo corregirlo.</p>
+          <div class="stats">
+            <span class="chip">9 submódulos + casos</span>
+            <span class="chip">Diagrama de Pitts interactivo</span>
+            <span class="chip">Evaluación de 30 preguntas</span>
+          </div>
+        </div>
+
+        <!-- ============================================================ 2.1 -->
+        <section class="sub" id="s2-1">
+          <h2><span class="sub-num">2.1</span> Hidratación, volumen y bucles de regulación</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Distinguir hidratación (variable intensiva) de volumen (variable extensiva).</li>
+            <li>Describir los elementos de un bucle de retroalimentación.</li>
+            <li>Explicar por qué "solo se regula lo que se detecta".</li>
+          </ul></div>
+
+          <p>Se habla de equilibrio <strong>hidrosódico</strong> no porque los balances de agua y de sodio estén unidos (son bastante independientes), sino porque toda alteración de la hidratación afecta a uno o a ambos.</p>
+
+          <div class="grid-2">
+            <div class="mini">
+              <h4>Volumen = extensivo</h4>
+              <p>Es proporcional, entre otras cosas, al tamaño del individuo y al número de células. Una desnutrición reduce el número de células y con él el volumen celular, <strong>sin</strong> que exista deshidratación celular.</p>
+            </div>
+            <div class="mini">
+              <h4>Hidratación = intensiva</h4>
+              <p>Refleja si cada compartimiento tiene el agua "que le corresponde". Todo cambio de hidratación cambia el volumen, pero no todo cambio de volumen es un cambio de hidratación.</p>
+            </div>
+          </div>
+
+          <h3>Anatomía de un bucle de retroalimentación</h3>
+          <p>El organismo funciona como un sistema automático industrial. Un <strong>efector</strong> detecta la desviación de una <strong>variable regulada</strong> respecto a su valor de referencia y actúa sobre un <strong>parámetro de control</strong>. Este modifica la <strong>variable ajustada</strong>, que a su vez corrige la variable regulada.</p>
+
+          <div class="widget">
+            <div class="widget-head"><span class="badge">Esquema</span><h3>Bucle de retroalimentación negativa</h3></div>
+            <div class="widget-body">
+              <svg class="svg-diagram" viewBox="0 0 640 250" role="img" aria-label="Bucle de retroalimentación">
+                <defs><marker id="ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker></defs>
+                <rect class="box hl pulse" x="230" y="14" width="180" height="52" rx="12"/>
+                <text x="320" y="45" text-anchor="middle" font-weight="700">Variable regulada</text>
+                <rect class="box" x="450" y="100" width="170" height="52" rx="12"/>
+                <text x="535" y="131" text-anchor="middle" font-weight="700">Efector (sensor)</text>
+                <rect class="box" x="230" y="184" width="180" height="52" rx="12"/>
+                <text x="320" y="215" text-anchor="middle" font-weight="700">Parámetro de control</text>
+                <rect class="box" x="20" y="100" width="170" height="52" rx="12"/>
+                <text x="105" y="131" text-anchor="middle" font-weight="700">Variable ajustada</text>
+                <path class="arrow hl flow" d="M410,40 C480,40 535,60 535,98" marker-end="url(#ah1)"/>
+                <path class="arrow hl flow" d="M535,152 C535,190 480,210 412,210" marker-end="url(#ah1)"/>
+                <path class="arrow hl flow" d="M230,210 C160,210 105,190 105,154" marker-end="url(#ah1)"/>
+                <path class="arrow hl flow" d="M105,100 C105,60 160,40 228,40" marker-end="url(#ah1)"/>
+                <text class="lbl" x="560" y="62">detecta la desviación</text>
+                <text class="lbl" x="478" y="235">actúa</text>
+                <text class="lbl" x="30" y="62">corrige</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="callout key"><div class="ttl">💡 "Solo se puede regular lo que se detecta"</div>
+            <ul>
+              <li>La <strong>hidratación extracelular</strong> no la mide ni el organismo ni el médico. El organismo mide la <strong>volemia efectiva</strong> y la toma como si fuera la hidratación extracelular. El médico usa signos clínicos.</li>
+              <li>La <strong>hidratación celular</strong> sí la detecta el organismo (osmorreceptores), pero no el médico, que mide su equivalente indirecto: la <strong>osmolalidad efectiva</strong>.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ============================================================ 2.2 -->
+        <section class="sub" id="s2-2">
+          <h2><span class="sub-num">2.2</span> La volemia efectiva</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Definir la volemia efectiva y sus receptores.</li>
+            <li>Enumerar sus cuatro determinantes y reconocer las hipovolemias efectivas "falsas".</li>
+          </ul></div>
+
+          <p>La <strong>volemia</strong> es el volumen sanguíneo total. Como el sistema vascular tiene una <strong>compliancia</strong> (ΔV/ΔP) imperfecta, un cambio de volumen cambia la presión y la tensión de la pared vascular. Eso lo detectan:</p>
+          <ul>
+            <li><strong>Barorreceptores</strong>: senocarotídeos y del aparato yuxtaglomerular renal.</li>
+            <li><strong>Volorreceptores</strong>: sobre todo en la aurícula derecha.</li>
+          </ul>
+          <p>El organismo interpreta esa presión como un reflejo del volumen: es la <strong>volemia efectiva</strong>. Normalmente se correlaciona bien con la hidratación extracelular. Los cambios de la hidratación celular no la modifican: si una célula sanguínea cambia de volumen, lo hace a costa del plasma y el volumen sanguíneo total no varía.</p>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Determinante</th><th>Mecanismo</th><th>Ejemplo clínico</th><th>¿Cambia la hidratación extracelular?</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Hidratación extracelular</strong> (volumen plasmático)</td><td>Más o menos volumen en el árbol vascular</td><td>Diarrea, hemorragia, sobrecarga salina</td><td>Sí</td></tr>
+                <tr><td><strong>Presión oncótica del plasma</strong></td><td>Si baja, el líquido pasa del plasma al intersticio (Starling)</td><td>Síndrome nefrótico (hipoalbuminemia)</td><td>No: el volumen extracelular total no varía</td></tr>
+                <tr><td><strong>Gasto cardíaco</strong></td><td>Si cae mucho y las resistencias no compensan → hipotensión</td><td>Insuficiencia cardíaca descompensada</td><td>No</td></tr>
+                <tr><td><strong>Resistencias periféricas</strong></td><td>Si caen mucho y el gasto no compensa → hipotensión</td><td>Cirrosis hepática descompensada</td><td>No</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout warn"><div class="ttl">⚠️ La trampa de los "falsos" déficits</div>
+            <p>En los tres últimos casos hay <strong>hipovolemia efectiva sin déficit real de volumen</strong>. El organismo no sabe distinguirlo: cree que está deshidratado y retiene sodio (y agua). Al intentar "normalizar" la volemia efectiva genera edemas. Es la base de la sobrecarga secundaria de sodio (2.8).</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 2.3 -->
+        <section class="sub" id="s2-3">
+          <h2><span class="sub-num">2.3</span> La osmolalidad efectiva (tonicidad)</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Distinguir solutos osmóticamente eficaces e ineficaces.</li>
+            <li>Demostrar que la osmolalidad efectiva es igual en todos los compartimientos y refleja la hidratación celular.</li>
+            <li>Calcularla a partir de la osmolalidad total y la urea.</li>
+          </ul></div>
+
+          <h3>El agua siempre está en equilibrio de difusión</h3>
+          <p>El agua atraviesa la membrana celular y la pared capilar libre y rápidamente. Los compartimientos celular e intersticial son muy distensibles, así que el agua se reparte hasta el equilibrio sin crear diferencias de presión hidrostática apreciables. Las pocas diferencias de presión que existen (unos cm de Hg entre plasma e intersticio) se compensan con diferencias de osmolalidad despreciables, menores del 1 % (≈ 1 mOsm/kg).</p>
+          <p>Como estos intercambios internos son mucho más rápidos que los intercambios con el exterior, se considera que <strong>siempre</strong> hay equilibrio: la fracción molar del agua es la misma en todas partes y, por tanto, las osmolalidades también.</p>
+
+          <div class="grid-2">
+            <div class="mini">
+              <h4>Soluto osmóticamente ineficaz</h4>
+              <p>Se comporta como el agua: se reparte rápido por todos los compartimientos y su concentración molal es igual en todos. El único endógeno importante es la <strong>urea</strong>.</p>
+            </div>
+            <div class="mini">
+              <h4>Soluto osmóticamente eficaz</h4>
+              <p>No se reparte libremente (Na⁺ y sus aniones fuera; K⁺ y sus aniones dentro; glucosa; manitol). Solo estos solutos pueden mover agua a través de la membrana.</p>
+            </div>
+          </div>
+
+          <div class="formula">
+            $$[\text{osM}_{ef}] = [\text{osM}] - [\text{osM}_{inef}] \approx [\text{osM}]_{\text{crioscopía}} - [\text{urea}]$$
+            <div class="cap">La <strong>osmolalidad efectiva</strong> o tonicidad es la suma de las concentraciones molales de los solutos eficaces. Una solución es <strong>hipertónica</strong> si su osmolalidad efectiva supera la del organismo e <strong>hipotónica</strong> si es inferior.</div>
+          </div>
+
+          <h3>Propiedad (a): es igual en todos los compartimientos</h3>
+          <p>Las osmolalidades totales son iguales (equilibrio del agua). Las de los solutos ineficaces también lo son, por definición. Luego su diferencia, la osmolalidad efectiva, también es igual. <strong>Solo un cambio de la osmolalidad efectiva mueve agua</strong> entre célula y exterior.</p>
+          <div class="callout clinic"><div class="ttl">🩺 Uremia e hidratación</div>
+            <p>En la insuficiencia renal grave la urea sube a varias decenas de mmol/L. La osmolalidad total aumenta mucho, pero la hidratación celular <strong>no cambia</strong>: la urea es ineficaz. Excepción: en una hemodiálisis rápida la urea no tiene tiempo de equilibrarse y se vuelve transitoriamente eficaz.</p>
+          </div>
+
+          <h3>Hipótesis (b): el contenido celular de osmoles eficaces es constante</h3>
+          <p>Para cada célula \(j\), con volumen \(V_j\) y contenido \(k_j\) de osmoles eficaces, se cumple \([\text{osM}_{ef}] = k_j/V_j\). Sumando todas las células:</p>
+          <div class="formula">$$[\text{osM}_{ef}] = \frac{\sum k_j}{\sum V_j} = \frac{K}{V_i}$$
+            <div class="cap">Si \(K\) es constante, la osmolalidad efectiva varía en sentido inverso al volumen celular: es el <strong>reflejo de la hidratación celular</strong>. Si cambia el número de células, K y V<sub>i</sub> cambian en proporción y K/V<sub>i</sub> no varía.</div>
+          </div>
+          <p>En la célula, compartimiento cerrado donde el K⁺ supone más del 95 % de los cationes, la hipótesis (b) se cumple <strong>salvo en la depleción intensa de potasio</strong>.</p>
+
+          <h3>Los tres determinantes</h3>
+          <div class="formula">$$[\text{osM}_{ef}] = \frac{K}{V_i} = \frac{M}{V_e} = \frac{K+M}{V_i+V_e} = \frac{K+M}{V}$$
+            <div class="cap">\(K\): osmoles eficaces celulares (K⁺ + aniones) · \(M\): osmoles eficaces extracelulares (Na⁺ + aniones, glucosa, manitol…) · \(V\): contenido hídrico.</div>
+          </div>
+          <ul>
+            <li><strong>Contenido hídrico:</strong> una sobrecarga de agua produce hipotonía (hiponatremia); un déficit produce hipertonía (hipernatremia). Al diluir o concentrar solo cambian de verdad la urea, el Na⁺ y el Cl⁻ que lo acompaña; los demás solutos se regulan por separado.</li>
+            <li><strong>Aniones:</strong> un cambio patológico de un anión se compensa con un cambio <em>opuesto</em> del Cl⁻, así que la osmolalidad no cambia.</li>
+            <li><strong>Cationes:</strong> un cambio de un catión arrastra un cambio <em>en el mismo sentido</em> del Cl⁻, así que la osmolalidad cambia el doble que el catión.</li>
+            <li>Un cambio apreciable (≥ 3 %) de la osmolalidad efectiva extracelular solo puede deberse al <strong>sodio</strong> (≥ 5 mmol/L), a la <strong>glucosa</strong> o a un soluto <strong>exógeno</strong> (manitol). Ningún otro catión endógeno puede variar tanto sin ser mortal.</li>
+          </ul>
+        </section>
+
+        <!-- ============================================================ 2.4 -->
+        <section class="sub" id="s2-4">
+          <h2><span class="sub-num">2.4</span> Osmolalidad efectiva y natremia</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Explicar por qué la natremia sustituye en clínica a la osmolalidad efectiva.</li>
+            <li>Clasificar una hiponatremia en hipotónica, isotónica o hipertónica.</li>
+          </ul></div>
+
+          <p>Una alteración patológica de la hidratación celular corresponde a una desviación de <strong>al menos 10 mOsm/kg</strong> de la osmolalidad efectiva. Solo puede deberse a:</p>
+          <div class="grid-2">
+            <div class="mini"><h4>Estado hipotónico (↓)</h4><p>Una caída de la natremia de al menos 5 mmol/L (normal: 140). Es la <strong>hiponatremia</strong>: ni la glucosa ni otro catión pueden bajar tanto.</p></div>
+            <div class="mini"><h4>Estado hipertónico (↑)</h4><p>Una <strong>hipernatremia</strong> (≥ 5 mmol/L), una <strong>hiperglucemia</strong> o la perfusión de un soluto eficaz exógeno (manitol).</p></div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Tipo de hiponatremia</th><th>Osmolalidad efectiva</th><th>Mecanismo</th><th>Hidratación celular</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Hipotónica</strong> (≈ 95 %)</td><td>Baja</td><td>Exceso relativo de agua</td><td>Hiperhidratación</td></tr>
+                <tr><td><strong>Isotónica</strong> ("falsa" o pseudohiponatremia)</td><td>Normal</td><td>Baja la fracción acuosa del plasma (hiperproteinemia, hiperlipidemia): menos sodio por litro de plasma, pero la molalidad es normal</td><td>Normal</td></tr>
+                <tr><td><strong>Hipertónica</strong></td><td>Alta</td><td>Un soluto eficaz no sódico (glucosa, manitol) saca agua de las células y diluye el Na⁺ extracelular</td><td>Deshidratación</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout key"><div class="ttl">💡 Regla práctica</div>
+            <p>Una hipernatremia es <strong>siempre</strong> hipertónica. Una hiponatremia es hipotónica en ≈ 95 % de los casos. Si se excluyen las isotónicas y las hipertónicas (fácil en el contexto clínico), la natremia sustituye a la osmolalidad efectiva, que es más difícil de medir:</p>
+            <p>$$\Delta[\text{osM}_{ef}] \approx 2\,\Delta[\text{Na}^+]$$</p>
+          </div>
+
+          <div class="widget" id="w-hypo">
+            <div class="widget-head"><span class="badge">Clasificador</span><h3>¿Qué tipo de disnatremia es?</h3></div>
+            <div class="widget-body">
+              <p class="hint">Introduce la natremia, la osmolalidad medida por crioscopía y la urea. Referencia de osmolalidad efectiva: ≈ 285 mOsm/kg (patológica si se desvía ≥ 10).</p>
+              <div class="btn-row">
+                <button type="button" class="btn sm" data-hypo="120,250,4,5">Exceso de ADH</button>
+                <button type="button" class="btn sm" data-hypo="126,312,6,45">Diabetes descompensada</button>
+                <button type="button" class="btn sm" data-hypo="127,290,5,5">Mieloma (hiperproteinemia)</button>
+                <button type="button" class="btn sm" data-hypo="139,332,45,5">Insuficiencia renal</button>
+                <button type="button" class="btn sm" data-hypo="158,322,6,5">Déficit de agua</button>
+              </div>
+              <div class="controls">
+                <div class="ctrl"><label for="h-na">Natremia (mmol/L)</label><input type="number" id="h-na" value="120" step="1"></div>
+                <div class="ctrl"><label for="h-osm">Osmolalidad medida (mOsm/kg)</label><input type="number" id="h-osm" value="250" step="1"></div>
+                <div class="ctrl"><label for="h-urea">Urea (mmol/L)</label><input type="number" id="h-urea" value="4" step="0.5"></div>
+                <div class="ctrl"><label for="h-glu">Glucemia (mmol/L)</label><input type="number" id="h-glu" value="5" step="0.5"></div>
+              </div>
+              <div class="readout" id="h-out"></div>
+              <div class="verdict" id="h-verdict"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================ 2.5 -->
+        <section class="sub" id="s2-5">
+          <h2><span class="sub-num">2.5</span> Modelización del equilibrio hidrosódico y relación de Edelman</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Enunciar las hipótesis del modelo y sus límites.</li>
+            <li>Usar \(cV_i = \text{cte}\) y \(\Delta m = \Delta(cV)\).</li>
+            <li>Explicar la paradoja: el sodio se "reparte" como si ocupara toda el agua corporal.</li>
+          </ul></div>
+
+          <p>Un buen modelo es lo bastante simple para usarlo en la clínica y lo bastante potente para describir lo observado. Pero solo vale mientras se cumplan sus hipótesis.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th></th><th>Hipótesis</th><th>Expresión</th><th>Se incumple si…</th></tr></thead>
+              <tbody>
+                <tr><td>(a)</td><td>El agua siempre está en equilibrio de difusión (supuesto)</td><td>\([\text{osM}_{ef}]_i = [\text{osM}_{ef}]_e\)</td><td>Hemodiálisis rápida (transitorio)</td></tr>
+                <tr><td>(b)</td><td>Contenido celular de osmoles eficaces constante</td><td>\([\text{osM}_{ef}]_i V_i = K\)</td><td>Depleción intensa de K⁺</td></tr>
+                <tr><td>(c)</td><td>Osmolalidad efectiva extracelular proporcional a la natremia</td><td>\([\text{osM}_{ef}]_e = \alpha c\)</td><td>Hiperglucemia importante, manitol</td></tr>
+                <tr><td>(d)</td><td>El Na intercambiable intracelular es constante</td><td>\(\Delta m = \Delta(cV_e)\)</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid-2">
+            <div class="formula">$$cV_i = \text{constante}$$<div class="cap">(2-3) La natremia varía en sentido <strong>inverso</strong> a la hidratación celular.</div></div>
+            <div class="formula">$$\Delta m = \Delta(cV_e) = \Delta(cV)$$<div class="cap">(2-4) Útil porque ΔV es el cambio de peso.</div></div>
+          </div>
+
+          <h3>La paradoja del sodio</h3>
+          <p>Si se añade Δm de sodio sin agua, la natremia sube como si ese sodio se hubiera repartido en <strong>toda el agua corporal</strong>, no solo en el volumen extracelular:</p>
+          <div class="formula">$$\Delta c = \frac{\Delta m}{V}$$</div>
+          <p>¿Por qué? Al subir la natremia sube la osmolalidad efectiva y sale agua de las células hacia el extracelular. Esa agua no trae osmoles eficaces y diluye la carga de sodio. El volumen extracelular <strong>no</strong> es constante, así que \(\Delta m \neq V_e\,\Delta c\).</p>
+
+          <h3>Relación de Edelman</h3>
+          <p>Es una generalización que <strong>no</strong> exige la hipótesis (b), así que sirve también en la depleción de potasio. A cambio supone que fuera de la célula solo cuentan el Na⁺ y su anión (osmolalidad = 2 × natremia) y dentro solo el K⁺ y su anión:</p>
+          <div class="formula">$$\text{Natremia} = \frac{\text{Na}_e + \text{K}_e}{\text{Agua total}}$$
+            <div class="cap">Los tres determinantes de la natremia son el <strong>agua total</strong>, el <strong>sodio intercambiable</strong> y el <strong>potasio intercambiable</strong>. Si K<sub>e</sub> es constante, se recupera Δm = Δ(cV).</div>
+          </div>
+
+          <div class="widget" id="w-edel">
+            <div class="widget-head"><span class="badge">Calculadora</span><h3>Relación de Edelman</h3></div>
+            <div class="widget-body">
+              <div class="controls">
+                <div class="ctrl"><label for="e-na">Na intercambiable (mmol) <output for="e-na"></output></label><input type="range" id="e-na" min="1800" max="3800" step="20" value="2800"></div>
+                <div class="ctrl"><label for="e-k">K intercambiable (mmol) <output for="e-k"></output></label><input type="range" id="e-k" min="2000" max="3800" step="20" value="3150"></div>
+                <div class="ctrl"><label for="e-v">Agua total (L) <output for="e-v"></output></label><input type="range" id="e-v" min="34" max="50" step="0.5" value="42"></div>
+              </div>
+              <div class="readout" id="e-out"></div>
+              <div class="verdict" id="e-verdict"></div>
+            </div>
+          </div>
+
+          <div class="example">
+            <div class="ex-head">✏️ Ejemplo: manitol frente a sodio (compartimientos cerrados)</div>
+            <div class="ex-body">
+              <p>Célula: 28 L de KCl a 140 mmol/L (280 mOsm/L). Extracelular: 14 L de NaCl a 140 mmol/L. La membrana solo deja pasar agua.</p>
+              <ol class="steps">
+                <li><strong>+84 mmol de manitol (extracelular):</strong> osmoles totales 7840 + 3920 + 84 = 11 844 en 42 L → 282 mOsm/L. V<sub>i</sub> = 7840/282 = 27.80 L; V<sub>e</sub> = 14.20 L. Na⁺ = 1960/14.2 = 138.0 mmol/L; manitol = 84/14.2 = 5.92 mmol/L → V<sub>D</sub> del manitol = 84/5.92 = <strong>14.2 L = V<sub>e</sub></strong>.</li>
+                <li><strong>+42 mmol de NaCl:</strong> también +84 mOsm → mismos volúmenes. Na⁺ = 2002/14.2 = 141.0 → Δc = 1 mmol/L → volumen de distribución <em>aparente</em> = 42/1 = <strong>42 L = agua total</strong>.</li>
+                <li><strong>Con ²⁴Na trazador:</strong> la radiactividad se mide en 14.2 L → el trazador da el volumen <em>real</em> de distribución (como el manitol), no el aparente.</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================ 2.6 -->
+        <section class="sub" id="s2-6">
+          <h2><span class="sub-num">2.6</span> Control del equilibrio hidrosódico: los dos bucles</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Describir el bucle del balance hídrico y el del balance de sodio.</li>
+            <li>Explicar por qué no existe un contenido hídrico ni un contenido de sodio "normal", sino "adaptado".</li>
+            <li>Reconocer la interacción de la hipovolemia efectiva intensa con el balance hídrico.</li>
+          </ul></div>
+
+          <p>El organismo puede ajustar rápido el contenido hídrico \(V\) y el contenido de sodio (es decir, \(M\)), pero no el potasio celular, que no está en contacto con el exterior. De \([\text{osM}_{ef}] = (K+M)/V\):</p>
+          <div class="grid-2">
+            <div class="formula">$$[\text{osM}_{ef}] = \frac{K+M}{V}$$<div class="cap">Controla la hidratación celular ajustando <strong>V</strong> (el agua).</div></div>
+            <div class="formula">$$V_e = V\,\frac{M}{K+M}$$<div class="cap">Controla el volumen extracelular ajustando <strong>M</strong> (el sodio).</div></div>
+          </div>
+
+          <div class="widget" id="w-loops">
+            <div class="widget-head"><span class="badge">Animación</span><h3>Los dos bucles, paso a paso</h3></div>
+            <div class="widget-body">
+              <p class="hint">Elige una situación y avanza paso a paso. Se resaltan los elementos que intervienen en cada momento.</p>
+              <div class="btn-row" id="loop-scen">
+                <button type="button" class="btn sm on" data-scen="water">Bebe 2 L de agua</button>
+                <button type="button" class="btn sm" data-scen="salt">Comida muy salada</button>
+                <button type="button" class="btn sm" data-scen="hypo">Hipovolemia efectiva intensa</button>
+              </div>
+              <svg class="svg-diagram" id="loops-svg" viewBox="0 0 900 350" role="img" aria-label="Bucles de regulación del agua y del sodio">
+                <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker></defs>
+                <text x="210" y="14" text-anchor="middle" font-weight="800" font-size="13">BALANCE HÍDRICO</text>
+                <text x="690" y="14" text-anchor="middle" font-weight="800" font-size="13">BALANCE DE SODIO</text>
+                <g id="w1"><rect class="box" x="130" y="22" width="160" height="56" rx="12"/><text x="210" y="46" text-anchor="middle" font-weight="700" font-size="13">Hidratación celular</text><text x="210" y="64" text-anchor="middle" class="lbl">(osmolalidad efectiva)</text></g>
+                <g id="w2"><rect class="box" x="255" y="142" width="160" height="56" rx="12"/><text x="335" y="166" text-anchor="middle" font-weight="700" font-size="13">Osmorreceptores</text><text x="335" y="184" text-anchor="middle" class="lbl">hipotálamo</text></g>
+                <g id="w3"><rect class="box" x="130" y="262" width="160" height="56" rx="12"/><text x="210" y="286" text-anchor="middle" font-weight="700" font-size="13">ADH · centros de la sed</text><text x="210" y="304" text-anchor="middle" class="lbl">excreción de agua / aportes</text></g>
+                <g id="w4"><rect class="box" x="5" y="142" width="160" height="56" rx="12"/><text x="85" y="166" text-anchor="middle" font-weight="700" font-size="13">Contenido hídrico</text><text x="85" y="184" text-anchor="middle" class="lbl">V (peso)</text></g>
+                <path id="wa1" class="arrow" d="M290,50 C330,50 340,90 337,140" marker-end="url(#ah2)"/>
+                <path id="wa2" class="arrow" d="M335,198 C335,250 320,290 292,290" marker-end="url(#ah2)"/>
+                <path id="wa3" class="arrow" d="M130,290 C100,290 85,250 85,200" marker-end="url(#ah2)"/>
+                <path id="wa4" class="arrow" d="M85,142 C85,90 100,50 128,50" marker-end="url(#ah2)"/>
+                <g id="n1"><rect class="box" x="610" y="22" width="160" height="56" rx="12"/><text x="690" y="46" text-anchor="middle" font-weight="700" font-size="13">Volemia efectiva</text><text x="690" y="64" text-anchor="middle" class="lbl">(≈ hidratación extracelular)</text></g>
+                <g id="n2"><rect class="box" x="735" y="142" width="160" height="56" rx="12"/><text x="815" y="166" text-anchor="middle" font-weight="700" font-size="13">Baro/volorreceptores</text><text x="815" y="184" text-anchor="middle" class="lbl">carótida · riñón · aurícula</text></g>
+                <g id="n3"><rect class="box" x="610" y="262" width="160" height="56" rx="12"/><text x="690" y="286" text-anchor="middle" font-weight="700" font-size="13">Natriuresis</text><text x="690" y="304" text-anchor="middle" class="lbl">hormonas natriuréticas</text></g>
+                <g id="n4"><rect class="box" x="485" y="142" width="160" height="56" rx="12"/><text x="565" y="166" text-anchor="middle" font-weight="700" font-size="13">Contenido de sodio</text><text x="565" y="184" text-anchor="middle" class="lbl">M → volumen extracelular</text></g>
+                <path id="na1" class="arrow" d="M770,50 C810,50 820,90 817,140" marker-end="url(#ah2)"/>
+                <path id="na2" class="arrow" d="M815,198 C815,250 800,290 772,290" marker-end="url(#ah2)"/>
+                <path id="na3" class="arrow" d="M610,290 C580,290 565,250 565,200" marker-end="url(#ah2)"/>
+                <path id="na4" class="arrow" d="M565,142 C565,90 580,50 608,50" marker-end="url(#ah2)"/>
+                <path id="x1" class="arrow" d="M610,36 C470,36 440,300 292,300" stroke-dasharray="5 5" marker-end="url(#ah2)"/>
+                <text x="450" y="340" text-anchor="middle" class="lbl">- - - hipovolemia efectiva intensa → ADH + angiotensina (sed): interacción entre bucles</text>
+              </svg>
+              <div class="btn-row">
+                <button type="button" class="btn" id="loop-prev">← Anterior</button>
+                <button type="button" class="btn primary" id="loop-next">Siguiente paso →</button>
+                <span class="chip" id="loop-count"></span>
+              </div>
+              <div class="verdict" id="loop-text"></div>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="mini">
+              <h4>Bucle del balance hídrico</h4>
+              <p><strong>Variable regulada:</strong> hidratación celular, detectada por osmorreceptores hipotalámicos (probablemente por la tensión de su membrana).</p>
+              <p><strong>Efector:</strong> secreción de ADH (antidiurética) y, si la deshidratación celular es importante, sed.</p>
+              <p><strong>Variable ajustada:</strong> contenido hídrico.</p>
+            </div>
+            <div class="mini">
+              <h4>Bucle del balance de sodio</h4>
+              <p><strong>Variable regulada:</strong> volemia efectiva (baro y volorreceptores), que el organismo toma por hidratación extracelular.</p>
+              <p><strong>Efector:</strong> excreción renal de sodio (hormonas natriuréticas, hormonas suprarrenales).</p>
+              <p><strong>Variable ajustada:</strong> contenido de sodio.</p>
+            </div>
+          </div>
+
+          <div class="callout key"><div class="ttl">💡 "Adaptado", no "normal"</div>
+            <p>El organismo <strong>no</strong> mantiene fijo el contenido hídrico ni el de sodio: no puede detectarlos. Los ajusta para conseguir una hidratación correcta.</p>
+            <ul>
+              <li>Quien come mucha sal retiene más agua y aumenta de peso para mantener la isotonía. <strong>No</strong> es una hiperhidratación celular.</li>
+              <li>Quien bebe mucha agua reduce su contenido de sodio (natriuréticos) para mantener el volumen extracelular. <strong>No</strong> es una deshidratación extracelular.</li>
+            </ul>
+            <p>Solo tiene sentido preguntar si el contenido está <em>adaptado</em> o no a la hidratación.</p>
+          </div>
+
+          <div class="callout note"><div class="ttl">🔁 Interacción entre bucles</div>
+            <p>Son casi independientes, con una excepción. La <strong>hipovolemia efectiva</strong> estimula la retención de sodio <em>desde el principio</em>. Si además supera un umbral elevado, estimula la <strong>ADH</strong> y la <strong>angiotensina</strong> (potente dipsógeno): aparece una sobrecarga hídrica secundaria con hipotonía.</p>
+            <p class="small muted">La hemodiálisis actúa al revés que el riñón: corrige la hidratación celular ajustando el sodio del dializado y la extracelular ajustando la cantidad de agua retirada.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 2.7 -->
+        <section class="sub" id="s2-7">
+          <h2><span class="sub-num">2.7</span> El diagrama de Pitts</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Representar el estado de hidratación con dos rectángulos.</li>
+            <li>Predecir el flujo osmótico tras cualquier perturbación de agua, sodio o potasio.</li>
+            <li>Ver cómo los bucles de regulación reconducen cada trastorno.</li>
+          </ul></div>
+
+          <p>Pitts, fisiólogo estadounidense, propuso representar los dos compartimientos como rectángulos. La <strong>anchura</strong> es el volumen (celular a la izquierda del 0, extracelular a la derecha) y la <strong>altura</strong> es la osmolalidad efectiva. El <strong>área</strong> representa el contenido de osmoles eficaces: potasio a la izquierda y sodio a la derecha. En el equilibrio ambas alturas son iguales.</p>
+
+          <div class="callout note"><div class="ttl">📐 Método</div>
+            <ol>
+              <li>Parte del estado normal (líneas discontinuas).</li>
+              <li>Aplica la perturbación. Salvo la depleción de K⁺, siempre afecta al compartimiento extracelular.</li>
+              <li>Si las alturas difieren, el agua se mueve del compartimiento de <strong>menor</strong> osmolalidad al de <strong>mayor</strong>, conservando las áreas, hasta igualarlas.</li>
+              <li>Opcional: deja que actúen los bucles de regulación.</li>
+            </ol>
+          </div>
+
+          <div class="widget" id="w-pitts">
+            <div class="widget-head"><span class="badge">Simulador</span><h3>Diagrama de Pitts interactivo</h3></div>
+            <div class="widget-body">
+              <p class="hint">Modelo: 70 kg, agua celular 25 L, extracelular 17 L, osmolalidad efectiva 280 mOsm/kg (natremia 140). El NaCl y el KCl aportan 2 osmoles por mmol.</p>
+              <div class="btn-row" id="p-presets">
+                <button type="button" class="btn sm" data-p="water">+ agua (fig. 2-6)</button>
+                <button type="button" class="btn sm" data-p="salt">+ sodio (fig. 2-7)</button>
+                <button type="button" class="btn sm" data-p="potassium">− potasio (fig. 2-8)</button>
+                <button type="button" class="btn sm" data-p="waterOverload">Sobrecarga hídrica primaria</button>
+                <button type="button" class="btn sm" data-p="waterDeficit">Déficit hídrico primario</button>
+                <button type="button" class="btn sm" data-p="naOverload">Sobrecarga de Na primaria</button>
+                <button type="button" class="btn sm" data-p="naDeficit">Déficit de Na moderado</button>
+                <button type="button" class="btn sm" data-p="naDeficitSevere">Déficit de Na grave</button>
+                <button type="button" class="btn sm" data-p="naSecondary">Sobrecarga de Na secundaria (ICC)</button>
+                <button type="button" class="btn sm" data-p="saline">1 L de suero salino isotónico</button>
+              </div>
+              <div class="controls">
+                <div class="ctrl"><label for="p-water">Agua añadida (L) <output for="p-water"></output></label><input type="range" id="p-water" min="-5" max="8" step="0.5" value="0"></div>
+                <div class="ctrl"><label for="p-na">Na⁺ extracelular (mmol) <output for="p-na"></output></label><input type="range" id="p-na" min="-900" max="900" step="20" value="0"></div>
+                <div class="ctrl"><label for="p-k">K⁺ celular (mmol) <output for="p-k"></output></label><input type="range" id="p-k" min="-900" max="0" step="20" value="0"></div>
+              </div>
+              <div class="btn-row">
+                <button type="button" class="btn sm" id="p-loopW">Bucle hídrico: OFF</button>
+                <button type="button" class="btn sm" id="p-loopN">Bucle del sodio: OFF</button>
+                <button type="button" class="btn primary" id="p-run">▶ Animar</button>
+              </div>
+              <div class="viz"><canvas id="pitts-canvas" aria-label="Diagrama de Pitts"></canvas></div>
+              <div class="legend"><span><i style="background:var(--s1)"></i>Celular (área ∝ osmoles de K⁺)</span><span><i style="background:var(--s3)"></i>Extracelular (área ∝ osmoles de Na⁺)</span><span><i style="border:2px dashed var(--muted)"></i>Estado normal</span></div>
+              <div class="readout" id="p-out"></div>
+              <div class="verdict" id="p-verdict"></div>
+            </div>
+          </div>
+
+          <h3>Las tres perturbaciones puras</h3>
+          <div class="grid-3">
+            <div class="mini"><h4>+ Agua</h4><p>Baja la altura extracelular y entra agua en la célula. El agua se reparte <strong>en proporción a los volúmenes</strong>: hiperhidratación celular y extracelular, hiponatremia. (Un déficit de agua hace lo contrario.)</p></div>
+            <div class="mini"><h4>+ Sodio</h4><p>Sube la altura extracelular y sale agua de la célula: deshidratación celular, hiperhidratación extracelular, hipernatremia. Crece el área extracelular.</p></div>
+            <div class="mini"><h4>− Potasio</h4><p>Baja la altura celular y sale agua de la célula: deshidratación celular, hiperhidratación extracelular e <strong>hiponatremia</strong>. Aquí la hiponatremia <em>no</em> indica hiperhidratación celular, sino el déficit de K⁺ (se incumple la hipótesis b).</p></div>
+          </div>
+        </section>
+
+        <!-- ============================================================ 2.8 -->
+        <section class="sub" id="s2-8">
+          <h2><span class="sub-num">2.8</span> Alteraciones de la hidratación</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Asociar hidratación celular ↔ balance hídrico ↔ natremia, e hidratación extracelular ↔ balance de sodio ↔ clínica.</li>
+            <li>Describir los seis trastornos del modelo con su hidratación, natremia y peso.</li>
+          </ul></div>
+
+          <p>Solo hay alteración de la hidratación cuando al menos uno de los dos bucles está <strong>descompensado</strong>, es decir, no cumple su objetivo.</p>
+          <div class="grid-2">
+            <div class="mini"><h4>Hidratación celular</h4><p>Su alteración indica un <strong>balance hídrico</strong> alterado, aunque la causa inicial fuera un cambio de osmoles. El objetivo del bucle hídrico es ajustar V, así que una osmolalidad efectiva anormal significa que V es inadecuado. Se diagnostica por la <strong>natremia</strong>: hipernatremia = déficit hídrico; hiponatremia = sobrecarga hídrica (salvo las isotónicas o hipertónicas).</p></div>
+            <div class="mini"><h4>Hidratación extracelular</h4><p>Su alteración indica un <strong>balance de sodio</strong> alterado. Se diagnostica por la <strong>clínica</strong>: edemas generalizados = hiperhidratación extracelular = sobrecarga de Na; pliegue cutáneo y taquicardia = deshidratación extracelular = déficit de Na.</p></div>
+          </div>
+
+          <h3>Trastornos primarios del balance hídrico</h3>
+          <p>Aparecen cuando se superan los mecanismos de dilución y concentración de la orina, o cuando falla el bucle. El bucle del sodio adapta el contenido de Na y mantiene normal el extracelular.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th></th><th>Sobrecarga hídrica primaria</th><th>Déficit hídrico primario</th></tr></thead>
+              <tbody>
+                <tr><td>Balance de agua</td><td>Sobrecarga</td><td>Déficit</td></tr>
+                <tr><td>Balance de sodio</td><td>Adaptado (a la baja)</td><td>Adaptado (al alza)</td></tr>
+                <tr><td>Hidratación celular</td><td><strong>Hiperhidratación</strong></td><td><strong>Deshidratación</strong></td></tr>
+                <tr><td>Hidratación extracelular</td><td>Normal</td><td>Normal</td></tr>
+                <tr><td>Natremia</td><td>Hiponatremia "de dilución"</td><td>Hipernatremia</td></tr>
+                <tr><td>Peso</td><td>↑ (la sobrecarga de agua)</td><td>↓ (el déficit de agua)</td></tr>
+                <tr><td>Resumen</td><td>Hiperhidratación celular <strong>pura</strong></td><td>Deshidratación celular <strong>pura</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Trastornos del balance de sodio</h3>
+          <p>El bucle hídrico adapta el agua para que la sobrecarga o el déficit de Na sean <strong>isotónicos</strong>: la natremia y la hidratación celular se mantienen normales.</p>
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th></th><th>Sobrecarga primaria de Na</th><th>Déficit de Na moderado</th></tr></thead>
+              <tbody>
+                <tr><td>Balance de agua</td><td>Adaptado (al alza)</td><td>Adaptado (a la baja)</td></tr>
+                <tr><td>Hidratación celular</td><td>Normal</td><td>Normal</td></tr>
+                <tr><td>Hidratación extracelular</td><td><strong>Hiperhidratación</strong> (edemas)</td><td><strong>Deshidratación</strong></td></tr>
+                <tr><td>Natremia</td><td>Normal</td><td>Normal</td></tr>
+                <tr><td>Volemia efectiva</td><td>Hipervolemia</td><td>Hipovolemia</td></tr>
+                <tr><td>Cuantificación</td><td>Δm = cΔV ≈ <strong>140 mmol de Na por kg</strong> ganado</td><td>Corrección: suero salino isotónico, <strong>tantos litros como kg perdidos</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Trastornos combinados por hipovolemia efectiva</h3>
+          <div class="grid-2">
+            <div class="mini">
+              <h4>Déficit de Na grave: "hiponatremia por déficit"</h4>
+              <p>La hipovolemia efectiva intensa estimula la ADH, que produce <strong>retención hídrica secundaria</strong>.</p>
+              <ul>
+                <li>Deshidratación extracelular (por el déficit de Na) + <strong>hiperhidratación celular</strong> (por el agua retenida).</li>
+                <li>La hiponatremia <strong>no mide</strong> el déficit de Na: solo refleja la sobrecarga hídrica. Además, esa retención de agua enmascara la pérdida de peso.</li>
+                <li>La corrección del Na se calcula como si se repartiera en el <strong>agua total</strong>. Hay que asociar restricción hídrica.</li>
+              </ul>
+            </div>
+            <div class="mini">
+              <h4>Sobrecarga de Na secundaria: "hiponatremia por sobrecarga"</h4>
+              <p>La hipovolemia efectiva sin déficit de volumen (insuficiencia cardíaca, síndrome nefrótico, cirrosis) retiene Na y, si es intensa, también agua.</p>
+              <ul>
+                <li>Hiperhidratación extracelular (edemas) + <strong>hiperhidratación celular</strong>.</li>
+                <li>La hiponatremia no tiene relación con la sobrecarga de Na: indica la sobrecarga hídrica secundaria.</li>
+                <li>La retención hídrica agrava el aumento de peso.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================ 2.9 -->
+        <section class="sub" id="s2-9">
+          <h2><span class="sub-num">2.9</span> En la práctica: diagnóstico, causas y tratamiento</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Usar el peso, la natremia y la clínica para diagnosticar un trastorno hidrosódico.</li>
+            <li>Relacionar cada trastorno con sus causas y su tratamiento sintomático.</li>
+          </ul></div>
+
+          <h3>El peso: útil pero engañoso</h3>
+          <ul>
+            <li>1 L de agua = 1 kg. Un cambio de peso <strong>muy rápido</strong> (horas o días) solo puede deberse a agua.</li>
+            <li>Pero muchas personas no conocen su peso basal, y un cambio lento suele deberse a desnutrición o a cambios de músculo y grasa.</li>
+            <li>El peso no dice si el trastorno es del agua o del sodio, y puede no cambiar: en un déficit grave de Na, la retención hídrica secundaria enmascara la pérdida.</li>
+          </ul>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Trastorno</th><th>Compartimiento</th><th>Signos clínicos</th></tr></thead>
+              <tbody>
+                <tr><td rowspan="3"><strong>Hiperhidratación</strong></td><td>Celular</td><td>Vómitos, trastornos de conciencia, coma</td></tr>
+                <tr><td>Extracelular · intersticial</td><td>Edemas generalizados</td></tr>
+                <tr><td>Extracelular · plasmático</td><td>Hipertensión arterial</td></tr>
+                <tr><td rowspan="3"><strong>Deshidratación</strong></td><td>Celular</td><td>Sed, sequedad de mucosas</td></tr>
+                <tr><td>Extracelular · intersticial</td><td>Pliegue cutáneo (poco fiable en ancianos)</td></tr>
+                <tr><td>Extracelular · plasmático</td><td>Taquicardia, hipotensión ortostática</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout warn"><div class="ttl">⚠️ La paradoja de la natremia</div>
+            <p>Aunque el Na⁺ es casi exclusivamente extracelular, la natremia (135–145 mmol/L) <strong>no informa del estado extracelular</strong>. Una hiponatremia puede acompañarse de un extracelular normal, disminuido (déficit de Na grave) o aumentado (sobrecarga secundaria). Paradójicamente, la natremia informa de la <strong>hidratación celular</strong>.</p>
+          </div>
+
+          <div class="widget" id="w-matrix">
+            <div class="widget-head"><span class="badge">Herramienta</span><h3>Matriz diagnóstica: natremia × exploración</h3></div>
+            <div class="widget-body">
+              <p class="hint">Filas: natremia (→ balance hídrico). Columnas: clínica extracelular (→ balance de sodio). Pulsa una casilla.</p>
+              <div class="table-wrap" style="margin-top:0">
+                <table class="data" id="mx-table">
+                  <thead><tr><th>Natremia \ Clínica</th><th>Pliegue, taquicardia</th><th>Normal</th><th>Edemas</th></tr></thead>
+                  <tbody>
+                    <tr><th>Alta (&gt; 145)</th><td><button class="btn sm" data-mx="hi-de">Ver</button></td><td><button class="btn sm" data-mx="hi-no">Ver</button></td><td><button class="btn sm" data-mx="hi-ed">Ver</button></td></tr>
+                    <tr><th>Normal</th><td><button class="btn sm" data-mx="no-de">Ver</button></td><td><button class="btn sm" data-mx="no-no">Ver</button></td><td><button class="btn sm" data-mx="no-ed">Ver</button></td></tr>
+                    <tr><th>Baja (&lt; 135)</th><td><button class="btn sm" data-mx="lo-de">Ver</button></td><td><button class="btn sm" data-mx="lo-no">Ver</button></td><td><button class="btn sm" data-mx="lo-ed">Ver</button></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="verdict" id="mx-out">Selecciona una combinación.</div>
+            </div>
+          </div>
+
+          <h3>Causas y tratamiento sintomático</h3>
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Trastorno</th><th>Fallo del bucle</th><th>Capacidad superada</th><th>Tratamiento sintomático</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Sobrecarga hídrica</strong></td><td>Secreción excesiva de ADH</td><td>Aporte de líquidos excesivo (trastorno de la sed)</td><td>Restricción hídrica</td></tr>
+                <tr><td><strong>Déficit hídrico</strong></td><td>Diabetes insípida (falta de ADH o riñón insensible)</td><td>No poder beber (discapacidad, edades extremas, falta de agua), insensibilidad a la sed</td><td>Rehidratar. Si no es posible por vía oral (coma: riesgo de aspiración), perfundir <strong>glucosa isotónica</strong>. Nunca agua pura IV: produce hemólisis.</td></tr>
+                <tr><td><strong>Déficit de sodio</strong></td><td>Insuficiencia suprarrenal</td><td>Pérdidas renales o extrarrenales (digestivas, cutáneas) mayores que los aportes</td><td><strong>NaCl isotónico IV</strong>; por vía oral en dosis altas provoca vómitos. Si hay hiponatremia, añadir restricción hídrica.</td></tr>
+                <tr><td><strong>Sobrecarga primaria de Na</strong></td><td>Exceso de hormonas suprarrenales</td><td>Aporte de sal mayor que la capacidad de excreción renal</td><td>Dieta sin sal; si no basta, <strong>diuréticos</strong> (en realidad natriuréticos: el agua se pierde después, por el bucle hídrico)</td></tr>
+                <tr><td><strong>Sobrecarga secundaria de Na</strong></td><td colspan="2">Causa de la hipovolemia efectiva: insuficiencia cardíaca, síndrome nefrótico, cirrosis descompensada</td><td>Restricción hídrica + sin sal + diuréticos. Difícil: los diuréticos agravan la hipovolemia, y con ella la retención de agua y la hiponatremia.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout clinic"><div class="ttl">🩺 Las pérdidas de sodio son hipotónicas</div>
+            <p>Las pérdidas de Na (diarrea, sudor, orina) siempre van con agua, en forma de soluciones <strong>menos saladas que el plasma</strong>. Tienden a producir hipernatremia y deshidratación celular, y a agravar la hipovolemia. Normalmente el bucle hídrico lo compensa.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 2.10 -->
+        <section class="sub" id="s2-10">
+          <h2><span class="sub-num">2.10</span> Casos resueltos</h2>
+
+          <details class="case">
+            <summary>Caso 2-A · Edemas con natremia de 128 mmol/L</summary>
+            <div class="case-body">
+              <p>Un paciente tiene edemas generalizados y una natremia de 128 mmol/L. ¿Qué diagnóstico es el único posible?</p>
+              <div class="answer"><strong>Sobrecarga hídrica + sobrecarga de sodio (hidrosódica).</strong> Los edemas indican hiperhidratación extracelular, es decir, sobrecarga de Na. La hiponatremia hipotónica indica hiperhidratación celular, es decir, sobrecarga hídrica. Es el cuadro de la "hiponatremia por sobrecarga" (insuficiencia cardíaca, cirrosis, nefrótico).</div>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 2-B · Diarrea con pérdida de 2 kg y natremia normal</summary>
+            <div class="case-body">
+              <p>Tras una diarrea, un paciente pierde de golpe 2 kg. Natremia: 140 mmol/L.</p>
+              <ol>
+                <li>Natremia normal → hidratación celular normal → el balance hídrico está adaptado.</li>
+                <li>Pérdida rápida de peso → pérdida de agua, toda del extracelular → <strong>deshidratación extracelular pura</strong>.</li>
+                <li>Déficit de Na: Δm = Δ(cV) = c·ΔV = 140 × (−2) = <strong>−280 mmol</strong>. Se corrige con 2 L de suero salino isotónico.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 2-C · Un sano toma un natriurético</summary>
+            <div class="case-body">
+              <ol>
+                <li><strong>Antes de que actúe el bucle hídrico:</strong> se pierden osmoles extracelulares sin agua → baja la osmolalidad efectiva → entra agua en las células → <strong>hiperhidratación celular</strong>.</li>
+                <li><strong>Con el bucle hídrico funcionando</strong> (dosis moderada): baja la ADH, se elimina agua y la pérdida de Na se vuelve isotónica.
+                  <ul><li>Natremia: <strong>no cambia</strong>.</li><li>Hidratación extracelular: <strong>deshidratación</strong> (déficit de Na).</li><li>Peso: <strong>disminuye</strong>.</li></ul>
+                </li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 2-D · +4 kg en pocos días y natremia de 120 mmol/L</summary>
+            <div class="case-body">
+              <p>70 kg; en condiciones normales, agua celular 24 L y extracelular 16 L. Gana 4 kg rápidamente. Natremia 120 mmol/L, sin alteraciones de proteínas ni glucosa.</p>
+              <ol>
+                <li><strong>¿Hidratación celular?</strong> cV<sub>i</sub> = cte → V<sub>i</sub> = 140 × 24/120 = 28 L → <strong>hiperhidratación celular</strong> (+4 L).</li>
+                <li><strong>¿Volumen extracelular?</strong> V = 40 + 4 = 44 L → V<sub>e</sub> = 44 − 28 = 16 L → <strong>sin cambios</strong>.</li>
+                <li><strong>¿Contenido de sodio?</strong> Δm = 120 × 44 − 140 × 40 = 5280 − 5600 = <strong>−320 mmol</strong> (adaptado a la baja).</li>
+                <li><strong>Diagnóstico:</strong> sobrecarga hídrica primaria = hiperhidratación celular pura, hiponatremia de dilución (por ejemplo, exceso de ADH).</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 2-E · Meningitis con natremia de 160 mmol/L</summary>
+            <div class="case-body">
+              <p>60 kg, sin edemas ni pliegue y con tensión normal (extracelular normal). En condiciones normales: agua 60 % del peso (36 L), extracelular 40 % del agua (14.4 L), celular 21.6 L.</p>
+              <ol>
+                <li><strong>Estado:</strong> deshidratación celular pura por déficit hídrico. V<sub>i</sub> = 140 × 21.6/160 = <strong>18.9 L</strong> → faltan <strong>2.7 L de agua</strong>. Contenido de Na: Δm = 160 × 33.3 − 140 × 36 = <strong>+288 mmol</strong> (adaptado al alza, para mantener V<sub>e</sub> con menos agua).</li>
+                <li><strong>2.7 L de glucosa isotónica, si la glucosa no entrara en las células:</strong> se añaden 2.7 L y 756 mOsm eficaces al extracelular. Osmolalidad efectiva = (6048 + 5364)/36 = 317 mOsm/kg, apenas cambia; V<sub>i</sub> ≈ 19.1 L. La natremia cae a ≈ 136 mmol/L (hiponatremia hipertónica): el producto natremia × V<sub>i</sub> <strong>ya no es constante</strong>, porque se incumple la hipótesis (c).</li>
+                <li><strong>Con insulina (glucosa en equilibrio a ambos lados):</strong> la glucosa se vuelve ineficaz. Osmolalidad efectiva = 10 656/36 = 296 → V<sub>i</sub> = 20.4 L; natremia 148.</li>
+                <li><strong>Glucosa ya metabolizada (CO₂ + agua):</strong> el mismo resultado que en el paso anterior. La glucosa isotónica equivale a <strong>agua pura sin riesgo de hemólisis</strong>: buena medida. La natremia (148) aún no es normal porque el Na "adaptado" (+288 mmol) expande el extracelular (≈ 15.6 L). El bucle del sodio lo eliminará por natriuresis y terminará de normalizar la situación.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 2-F · Depleción intensa de potasio (razonamiento con Pitts)</summary>
+            <div class="case-body">
+              <ol>
+                <li><strong>Sin bucles:</strong> baja el área celular → sale agua de la célula → deshidratación celular, hiperhidratación extracelular, hiponatremia; peso sin cambios.</li>
+                <li><strong>El bucle hídrico recupera el volumen celular:</strong> para que V<sub>i</sub> vuelva a su valor con menos K⁺, la osmolalidad tiene que bajar más → se retiene agua → más hiponatremia, más volumen extracelular y aumento de peso.</li>
+                <li><strong>Después actúa el bucle del sodio:</strong> natriuresis hasta normalizar V<sub>e</sub>. Al final, ambos volúmenes son normales, <strong>persiste la hiponatremia</strong> y el peso casi no ha cambiado.</li>
+                <li><strong>Consecuencias:</strong> no hay un cambio de peso significativo. Aportar sodio es <strong>inútil y peligroso</strong> (hiperhidratación extracelular). Lo que hay que reponer es el <strong>potasio</strong>. Compruébalo con el preset «− potasio» y los dos bucles activados.</li>
+              </ol>
+            </div>
+          </details>
+        </section>
+
+        <!-- ============================================================ QUIZ -->
+        <section class="sub" id="evaluacion">
+          <h2><span class="sub-num">✓</span> Evaluación del módulo 2</h2>
+          <p>30 preguntas de nivel universitario con una sola respuesta correcta. Al calificar verás la explicación de cada una y los temas que debes repasar.</p>
+          <div class="quiz-root"></div>
+          <div class="pager">
+            <a class="btn" href="modulo-1.html">← Módulo 1</a>
+            <a class="btn primary" href="modulo-3.html">Módulo 3: ácido-base →</a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

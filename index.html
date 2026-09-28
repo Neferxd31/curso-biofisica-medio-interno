@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Biofísica del Medio Interno</title>
+  <meta name="description" content="Curso práctico e interactivo de biofísica del medio interno: compartimientos líquidos, equilibrio del agua y del sodio, y equilibrio ácido-base.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script defer src="assets/js/core.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-logo">Bф</span> Biofísica del medio interno</a>
+    <span class="spacer"></span>
+    <button class="icon-btn" data-theme-toggle type="button">☾</button>
+  </header>
+
+  <div class="home-hero">
+    <span class="chip">Curso práctico · 3 módulos · 90 preguntas de evaluación</span>
+    <h1>Biofísica del medio interno</h1>
+    <p class="lead">Del agua que nos compone al pH que nos mantiene vivos. Un recorrido interactivo por los capítulos 1 a 3 de <em>Biofísica</em> (A. Aurengo y T. Petitclerc), con simuladores, gráficas, casos clínicos resueltos y una evaluación universitaria al final de cada módulo.</p>
+  </div>
+
+  <main class="home-wrap">
+    <div class="mod-cards">
+      <a class="mod-card c1" href="modulo-1.html" data-home-progress="m1" data-total="8">
+        <span class="num">Módulo 1</span>
+        <h2>Compartimientos líquidos del organismo</h2>
+        <p>Cómo se mide la composición de una disolución y cómo se reparten el agua y los solutos entre la célula, el intersticio y el plasma.</p>
+        <ul>
+          <li>Estados de la materia y disoluciones</li>
+          <li>Molaridad, molalidad, osmolalidad, equivalentes</li>
+          <li>Agua corporal y ionograma</li>
+          <li>Trazadores y volumen de distribución</li>
+        </ul>
+        <div class="foot"><div class="pbar"><span></span></div><div class="plbl"></div></div>
+      </a>
+      <a class="mod-card c2" href="modulo-2.html" data-home-progress="m2" data-total="10">
+        <span class="num">Módulo 2</span>
+        <h2>Equilibrio del agua y del sodio</h2>
+        <p>Hidratación celular y extracelular, osmolalidad efectiva, natremia, bucles de regulación y diagnóstico de los trastornos hidrosódicos.</p>
+        <ul>
+          <li>Volemia y osmolalidad efectivas</li>
+          <li>Relación de Edelman y modelización</li>
+          <li>Diagrama de Pitts interactivo</li>
+          <li>Trastornos, diagnóstico y tratamiento</li>
+        </ul>
+        <div class="foot"><div class="pbar"><span></span></div><div class="plbl"></div></div>
+      </a>
+      <a class="mod-card c3" href="modulo-3.html" data-home-progress="m3" data-total="12">
+        <span class="num">Módulo 3</span>
+        <h2>Equilibrio ácido-base</h2>
+        <p>pH, tampones abiertos y cerrados, producción y eliminación de ácidos, y la lectura de cualquier gasometría en el diagrama de Davenport.</p>
+        <ul>
+          <li>pH, ácidos, bases y Henderson-Hasselbalch</li>
+          <li>Poder tampón y curvas de titulación</li>
+          <li>Pulmón, riñón y metabolismo</li>
+          <li>Diagrama de Davenport interactivo</li>
+        </ul>
+        <div class="foot"><div class="pbar"><span></span></div><div class="plbl"></div></div>
+      </a>
+    </div>
+
+    <h2 class="section-title">Cómo aprovechar el curso</h2>
+    <div class="grid-3">
+      <div class="mini"><h4>1 · Lee y manipula</h4><p>Cada submódulo combina teoría breve con un simulador o gráfica. Mueve los controles: la intuición física aparece cuando ves qué cambia y qué no.</p></div>
+      <div class="mini"><h4>2 · Resuelve los casos</h4><p>Los casos clínicos están plegados. Intenta resolverlos antes de abrir la solución: así entrenas el razonamiento que piden los exámenes.</p></div>
+      <div class="mini"><h4>3 · Evalúate</h4><p>30 preguntas de nivel universitario por módulo, con explicación de cada respuesta. Tu progreso y tu mejor nota se guardan en este navegador.</p></div>
+    </div>
+
+    <h2 class="section-title">Hoja de valores normales</h2>
+    <p class="muted">Los números que conviene tener memorizados antes de empezar a razonar.</p>
+    <div class="table-wrap">
+      <table class="data">
+        <thead><tr><th>Magnitud</th><th class="num">Valor de referencia</th><th>Dónde aparece</th></tr></thead>
+        <tbody>
+          <tr><td>Agua corporal total</td><td class="num">≈ 60 % del peso</td><td>Módulo 1</td></tr>
+          <tr><td>Agua celular / extracelular</td><td class="num">60 % / 40 % del agua total</td><td>Módulo 1</td></tr>
+          <tr><td>Plasma / intersticio</td><td class="num">12 % / 28 % del agua total</td><td>Módulo 1</td></tr>
+          <tr><td>Fracción acuosa del plasma (φ)</td><td class="num">0.93</td><td>Módulo 1</td></tr>
+          <tr><td>Osmolalidad de los líquidos corporales</td><td class="num">≈ 300 mOsm/kg de agua</td><td>Módulos 1 y 2</td></tr>
+          <tr><td>Natremia</td><td class="num">135–145 mmol/L (140)</td><td>Módulo 2</td></tr>
+          <tr><td>Potasemia</td><td class="num">≈ 4 mmol/L</td><td>Módulo 1</td></tr>
+          <tr><td>Cloremia / bicarbonato</td><td class="num">103 / 24–26 mmol/L</td><td>Módulos 1 y 3</td></tr>
+          <tr><td>Glucemia / urea</td><td class="num">≈ 5 / ≈ 5 mmol/L</td><td>Módulos 1 y 2</td></tr>
+          <tr><td>Hematocrito</td><td class="num">0.46 ± 0.06 (H) · 0.42 ± 0.06 (M)</td><td>Módulo 1</td></tr>
+          <tr><td>pH arterial</td><td class="num">7.40 ± 0.02 ([H⁺] ≈ 40 nmol/L)</td><td>Módulo 3</td></tr>
+          <tr><td>P<sub>CO₂</sub> arterial</td><td class="num">40 mmHg (36–42)</td><td>Módulo 3</td></tr>
+          <tr><td>CO₂ disuelto</td><td class="num">1.2 mmol/L (= 0.03 × P<sub>CO₂</sub>)</td><td>Módulo 3</td></tr>
+          <tr><td>pK del par CO₂/HCO₃⁻ · de los tampones cerrados</td><td class="num">6.1 · 6.8</td><td>Módulo 3</td></tr>
+          <tr><td>Carga ácida fija a eliminar por el riñón</td><td class="num">≈ 1 mmol/kg/día (≈ 70 mmol)</td><td>Módulo 3</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="footer">
+    Material de estudio elaborado a partir de los capítulos 1–3 de <em>Biofísica</em> (Aurengo &amp; Petitclerc). Explicaciones, simuladores y preguntas son originales de este curso.
+  </footer>
+</body>
+</html>

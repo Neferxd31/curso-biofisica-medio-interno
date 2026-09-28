@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Compartimientos Líquidos</title>
+  <meta name="description" content="Módulo 1: estados de la materia, disoluciones, formas de expresar la concentración, agua corporal, solutos y medida de volúmenes con trazadores.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/js/core.js"></script>
+  <script defer src="assets/js/quiz-m1.js"></script>
+  <script defer src="assets/js/m1.js"></script>
+</head>
+<body class="m1" data-module="m1">
+  <header class="topbar">
+    <button class="icon-btn menu-btn" type="button" aria-label="Abrir índice">☰</button>
+    <a class="brand" href="index.html"><span class="brand-logo">Bф</span></a>
+    <span class="crumb">Módulo 1 · Compartimientos líquidos del organismo</span>
+    <span class="spacer"></span>
+    <button class="icon-btn" data-theme-toggle type="button">☾</button>
+    <span class="progress-top"></span>
+  </header>
+  <div class="scrim"></div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h4>Módulo 1</h4>
+      <div class="side-progress">
+        <div class="bar"><span></span></div>
+        <div class="lbl"><span>Leído: <b class="pct">0%</b></span><span class="best"></span></div>
+      </div>
+      <ul class="toc"></ul>
+      <div class="side-nav">
+        <a href="index.html">← Inicio</a>
+        <a href="modulo-2.html">Módulo 2: agua y sodio →</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="content-inner">
+
+        <div class="mod-hero">
+          <svg class="deco" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 5 C50 5 15 45 15 65 a35 35 0 0 0 70 0 C85 45 50 5 50 5z" fill="currentColor"/></svg>
+          <div class="eyebrow">Módulo 1</div>
+          <h1>Compartimientos líquidos del organismo</h1>
+          <p class="lead">El agua es el constituyente más abundante del cuerpo, pero no está repartida al azar: la membrana celular y la pared capilar la dividen en compartimientos de composición muy distinta. Aquí aprenderás a describir una disolución con precisión y a medir esos compartimientos sin vaciarlos.</p>
+          <div class="stats">
+            <span class="chip">7 submódulos + casos</span>
+            <span class="chip">4 simuladores</span>
+            <span class="chip">Evaluación de 30 preguntas</span>
+          </div>
+        </div>
+
+        <!-- ============================================================ 1.1 -->
+        <section class="sub" id="s1-1">
+          <h2><span class="sub-num">1.1</span> Estados de la materia: la batalla entre dispersión y agregación</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Explicar sólido, líquido y gas comparando energía cinética y energía de interacción.</li>
+            <li>Usar la ley de los gases perfectos y saber cuándo deja de ser válida.</li>
+          </ul></div>
+
+          <p>Una <strong>molécula</strong> es la cantidad mínima de un cuerpo puro que conserva sus propiedades físicas y químicas. Como las moléculas son muchísimas, se cuentan por <strong>moles</strong>: un mol contiene \(N = 6.02 \times 10^{23}\) moléculas (número de Avogadro). La <strong>masa molar</strong> es la masa de un mol, normalmente en gramos.</p>
+
+          <p>En cualquier materia compiten dos tendencias opuestas:</p>
+          <div class="grid-2">
+            <div class="mini">
+              <h4>Dispersión → agitación térmica</h4>
+              <p>Las moléculas se mueven de forma desordenada. Su energía cinética media es proporcional a la temperatura absoluta:</p>
+              <p>$$E_c \propto k\,T \qquad k = 1.38\times10^{-23}\ \text{J/K}$$</p>
+              <p class="small muted">\(k\) es la constante de Boltzmann. En el cero absoluto (≈ −273 °C) la agitación térmica cesa; por eso no existen temperaturas inferiores.</p>
+            </div>
+            <div class="mini">
+              <h4>Agregación → fuerzas intermoleculares</h4>
+              <p>Son fuerzas electrostáticas cuya energía de interacción \(E_I\) decae como \(1/r^6\): solo actúan a distancias muy cortas. Valen entre 0.5 y 20 kJ/mol, muy por debajo de un enlace covalente (400–800 kJ/mol).</p>
+              <p class="small muted">A distancias aún menores aparece una repulsión que decae como \(1/r^{12}\). Sin ella la materia colapsaría en un bloque único: por eso las moléculas "rebotan".</p>
+            </div>
+          </div>
+
+          <div class="widget" id="w-states">
+            <div class="widget-head"><span class="badge">Simulador</span><h3>Calienta la materia y observa el cambio de estado</h3></div>
+            <div class="widget-body">
+              <div class="controls">
+                <div class="ctrl">
+                  <label for="temp">Temperatura (relativa) <output for="temp"></output></label>
+                  <input type="range" id="temp" min="2" max="100" value="20">
+                </div>
+              </div>
+              <div class="viz"><canvas id="states-canvas" aria-label="Simulación de partículas"></canvas></div>
+              <div class="readout">
+                <div class="stat"><div class="k">Estado</div><div class="v" id="st-state">—</div></div>
+                <div class="stat"><div class="k">Relación E<sub>c</sub> / E<sub>I</sub></div><div class="v" id="st-ratio">—</div></div>
+                <div class="stat"><div class="k">¿Coherente?</div><div class="v" id="st-coh">—</div></div>
+                <div class="stat"><div class="k">¿Fluido?</div><div class="v" id="st-flu">—</div></div>
+              </div>
+              <p class="hint small muted" style="margin-top:10px">Con E<sub>c</sub> ≪ E<sub>I</sub> las partículas solo vibran alrededor de posiciones fijas. Cuando E<sub>c</sub> ≈ E<sub>I</sub> se deslizan unas sobre otras sin separarse. Con E<sub>c</sub> ≫ E<sub>I</sub> llenan todo el recipiente.</p>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th></th><th>No fluido</th><th>Fluido</th></tr></thead>
+              <tbody>
+                <tr><th>Coherente</th><td><strong>Sólido</strong> (E<sub>I</sub> ≫ E<sub>c</sub>): forma propia</td><td><strong>Líquido</strong> (E<sub>I</sub> ≈ E<sub>c</sub>): sin forma propia, sin dispersarse</td></tr>
+                <tr><th>No coherente</th><td>—</td><td><strong>Gas</strong> (E<sub>c</sub> ≫ E<sub>I</sub>): disperso, ocupa todo el volumen</td></tr>
+              </tbody>
+              <caption>Clasificación de los estados físicos según coherencia y fluidez.</caption>
+            </table>
+          </div>
+
+          <h3>El gas perfecto</h3>
+          <p>Es un modelo ideal: se desprecian las interacciones entre moléculas y sus energías de rotación y vibración. La presión nace de los choques contra la pared, así que crece con su violencia (\(T\)) y con su número (moléculas por volumen, \(n_m/V\)). La termodinámica estadística demuestra que:</p>
+          <div class="formula">
+            $$P = k\,T\,\frac{n_m}{V} \quad\Longleftrightarrow\quad PV = nRT,\qquad R = kN \approx 8.314\ \text{J·K}^{-1}\text{·mol}^{-1}$$
+            <div class="cap">\(n = n_m/N\) es el número de moles; \(R\) es la versión molar de \(k\).</div>
+          </div>
+          <ul>
+            <li>Un gas real se acerca al comportamiento perfecto cuando <strong>baja la presión</strong> (las moléculas se separan) o <strong>sube la temperatura</strong> (\(E_I\) pierde peso frente a \(E_c\)).</li>
+            <li>En un gas real la presión es <strong>menor</strong> que la predicha: la atracción frena a las moléculas antes de que choquen con la pared.</li>
+          </ul>
+
+          <div class="callout key"><div class="ttl">💡 Idea clave</div>
+            <p>El líquido es el estado "difícil" de modelar, porque ni la agitación ni la interacción son despreciables. Por eso, para las disoluciones se recurre a una simplificación: la <strong>solución ideal</strong> (submódulo 1.2).</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 1.2 -->
+        <section class="sub" id="s1-2">
+          <h2><span class="sub-num">1.2</span> Disoluciones, suspensiones, coloides y geles</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Distinguir una disolución verdadera de una suspensión y de un estado coloidal.</li>
+            <li>Explicar por qué toda disolución tiende a ser ideal al diluirla.</li>
+          </ul></div>
+
+          <p>Una <strong>disolución</strong> es una mezcla líquida homogénea <em>hasta el nivel molecular</em>: moléculas e iones se reparten uniformemente. El componente mayoritario es el <strong>solvente</strong> (en biología, siempre el agua) y los demás son <strong>solutos</strong>.</p>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Sistema</th><th>¿Homogéneo a nivel molecular?</th><th>Comportamiento</th><th>Ejemplo biológico</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Disolución verdadera</strong></td><td>Sí</td><td>Estado disperso definitivo</td><td>Na⁺, glucosa y urea en el plasma</td></tr>
+                <tr><td><strong>Estado coloidal</strong></td><td>Intermedio</td><td>Propiedades particulares, como dispersar la luz</td><td>Disoluciones de macromoléculas (proteínas, ADN)</td></tr>
+                <tr><td><strong>Suspensión</strong></td><td>No: hay agregados</td><td>Los agregados no sedimentan espontáneamente; la agitación térmica los mantiene dispersos</td><td>La sangre: células en suspensión en el plasma</td></tr>
+                <tr><td><strong>Gel</strong></td><td>Red macromolecular laxa</td><td>Líquido para el solvente y los solutos, pero con forma propia aparente</td><td>El citoplasma, rico en proteínas</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout clinic"><div class="ttl">🩺 En la clínica: la VSG</div>
+            <p>Dentro de los vasos, la circulación mantiene las células sanguíneas en suspensión. <em>In vitro</em>, los glóbulos rojos sedimentan a una velocidad medible en mm/h: la <strong>velocidad de sedimentación globular</strong>.</p>
+          </div>
+
+          <h3>Los geles: una red de pesca bajo el mar</h3>
+          <p>En un gel, el solvente y las macromoléculas circulan casi libremente entre las mallas, igual que en un líquido. Pero la red frena los movimientos de conjunto, igual que una red en el mar deja pasar el agua y aun así amortigua el oleaje. De ahí su aspecto gelatinoso. El citoplasma se comporta así.</p>
+
+          <h3>La solución ideal</h3>
+          <p>Es aquella en la que todas las energías de interacción son equivalentes: solvente–solvente, solvente–soluto y soluto–soluto. Al <strong>diluir</strong>, los enlaces con el soluto se vuelven despreciables frente a los enlaces solvente–solvente, que son mucho más numerosos. Por eso <strong>toda disolución tiende a la idealidad a medida que se diluye</strong>. Los líquidos biológicos son disoluciones diluidas, así que el modelo ideal les funciona bien.</p>
+        </section>
+
+        <!-- ============================================================ 1.3 -->
+        <section class="sub" id="s1-3">
+          <h2><span class="sub-num">1.3</span> Cómo expresar la composición de una disolución</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Definir osmol, fracción molar y concentraciones ponderal, molar, molal, osmolar, osmolal y equivalente.</li>
+            <li>Pasar de molaridad a molalidad con la fracción acuosa del plasma.</li>
+            <li>Relacionar la osmolalidad con la fracción molar del agua.</li>
+          </ul></div>
+
+          <h3>Unidades cinéticas y osmoles</h3>
+          <p>En un líquido, cada partícula que se mueve de forma independiente (una molécula no disociada o cada ion) es una <strong>unidad cinética</strong>. Un <strong>osmol</strong> (Osm) es un número de Avogadro de unidades cinéticas. Así se generaliza el mol: 2 mmol de Na⁺ y 1 mmol de SO₄²⁻ son especies distintas, pero juntas suman <strong>3 mOsm</strong>.</p>
+          <div class="formula">$$n_{Osm} = \sum_i n_i \qquad\text{y, para un ácido débil monoprótico disociado en fracción }\alpha:\quad c_{Osm} = c\,(1+\alpha)$$</div>
+          <div class="example">
+            <div class="ex-head">✏️ Ejemplo: osmolaridad de un ácido débil</div>
+            <div class="ex-body">
+              <p>Una disolución 50 mmol/L de un ácido débil AH disociado al 20 %:</p>
+              <ol class="steps">
+                <li>Forma disociada: 20 % de 50 = <strong>10 mmol/L de A⁻</strong> y <strong>10 mmol/L de H⁺</strong>.</li>
+                <li>Queda sin disociar el 80 %: <strong>40 mmol/L de AH</strong>.</li>
+                <li>Osmolaridad = 10 + 10 + 40 = <strong>60 mOsm/L</strong> = 50 × (1 + 0.2).</li>
+              </ol>
+            </div>
+          </div>
+
+          <h3>El mapa de las concentraciones</h3>
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Concentración</th><th>Definición</th><th>Unidad SI</th><th>Unidad habitual</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Ponderal (másica)</strong></td><td>masa de soluto / volumen de disolución</td><td>kg/m³</td><td>g/L, mg/L</td></tr>
+                <tr><td><strong>Molar</strong></td><td>moles de soluto / volumen de <em>disolución</em></td><td>mol/m³</td><td>mmol/L</td></tr>
+                <tr><td><strong>Molal</strong></td><td>moles de soluto / masa de <em>solvente</em></td><td>mol/kg</td><td>mmol/L de agua</td></tr>
+                <tr><td><strong>Osmolar</strong></td><td>osmoles / volumen de disolución</td><td>Osm/m³</td><td>mOsm/L</td></tr>
+                <tr><td><strong>Osmolal</strong></td><td>osmoles / masa de solvente</td><td>Osm/kg</td><td>mOsm/kg (o /L de agua)</td></tr>
+                <tr><td><strong>Equivalente</strong></td><td>cargas eléctricas / volumen</td><td>Eq/m³</td><td>mEq/L</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Fracción molar: la medida más "teórica"</h3>
+          <p>Es la proporción de moles de un constituyente sobre los moles totales. No distingue solvente de solutos y aparece directamente en las ecuaciones de la teoría de disoluciones:</p>
+          <div class="formula">$$f_i = \frac{n_i}{n_{H_2O} + n_{Osm}} \qquad f_{H_2O} = \frac{n_{H_2O}}{n_{H_2O}+n_{Osm}} \qquad f_{H_2O} + f_s = 1$$</div>
+          <p>En la práctica es incómoda: nadie prepara un jarabe con "fracción molar de azúcar 0.01". En el laboratorio se trabaja con la <strong>concentración ponderal</strong> \(C_i = m_i/V\). Los porcentajes clásicos son ponderales: glucosa al 5 % ≈ 50 g/L; hemoglobina 14 g/dL ≈ 140 g/L.</p>
+
+          <h3>Molal y molar: ¿por litro de agua o por litro de disolución?</h3>
+          <div class="grid-2">
+            <div class="mini">
+              <h4>Molal (teoría)</h4>
+              <p>Ligada directamente a la fracción molar. Por eso interviene en la difusión (ley de Fick), la presión osmótica (van't Hoff), el equilibrio de Donnan y los electrodos.</p>
+              <p>$$c_{i,\text{molal}} = \frac{n_i}{m_{H_2O}} = \frac{1}{M_0}\,\frac{f_i}{f_{H_2O}}$$</p>
+              <p class="small muted">\(M_0 = 0.018\) kg/mol, masa molar del agua. Un kg de agua contiene siempre 55.56 mol.</p>
+            </div>
+            <div class="mini">
+              <h4>Molar (práctica)</h4>
+              <p>Se obtiene directamente de la concentración ponderal y la masa molar. La OMS la recomienda para expresar resultados biomédicos:</p>
+              <p>$$c_i = \frac{C_i}{M_i}$$</p>
+              <p class="small muted">El sufijo <strong>-emia</strong> indica concentración plasmática: natremia, potasemia, glucemia.</p>
+            </div>
+          </div>
+
+          <p>En el plasma, un litro contiene solo <strong>0.93 L de agua</strong>: proteínas y lípidos ocupan el resto. Ese cociente es la <strong>fracción acuosa</strong> \(\varphi\):</p>
+          <div class="formula">
+            $$c_{i,\text{molal}} = \frac{c_i}{\varphi} \qquad \varphi \approx 1 - 0.001 \times \text{proteinemia (g/L)}$$
+            <div class="cap">Con proteinemia de 70 g/L y densidad proteica ≈ 1, las proteínas ocupan ≈ 70 cm³ por litro, así que φ ≈ 0.93.</div>
+          </div>
+
+          <div class="callout warn"><div class="ttl">⚠️ Error frecuente</div>
+            <p>No confundas <strong>hemoglobinemia</strong> (hemoglobina libre en el plasma, normalmente nula; si es medible indica hemólisis intravascular) con la <strong>tasa de hemoglobina</strong> de la sangre (≈ 14 g/dL).</p>
+          </div>
+
+          <div class="example">
+            <div class="ex-head">✏️ Preparar una disolución: ¿molal o molar?</div>
+            <div class="ex-body">
+              <p>Queremos 5 mmol/L de urea (M = 60 g/mol), es decir, 0.3 g.</p>
+              <ol class="steps">
+                <li><strong>Método A (molal):</strong> 0.3 g de urea en 1 kg de agua → 5 mmol/kg de agua.</li>
+                <li><strong>Método B (molar):</strong> 0.3 g de urea y agua "c.s.p." (cantidad suficiente para) 1 L de disolución → 5 mmol/L. Se usa algo menos de 1 L de agua porque la urea ocupa volumen.</li>
+                <li><strong>Aplicación a un medicamento:</strong> un frasco con 1.5 g de amoxicilina se enrasa a 60 mL de disolución → 25 g/L = 125 mg por cucharada de 5 mL. Si se añadieran 60 mL de agua (método A), no sabríamos qué volumen administrar para dar exactamente 125 mg.</li>
+              </ol>
+            </div>
+          </div>
+
+          <h3>Osmolalidad y osmolaridad</h3>
+          <p>La osmolalidad solo depende de la fracción molar del <strong>agua</strong>, no de qué solutos haya:</p>
+          <div class="formula">
+            $$c_{\text{osmolal}} = \frac{1}{M_0}\,\frac{1-f_{H_2O}}{f_{H_2O}} \qquad\Longleftrightarrow\qquad f_{H_2O} = \frac{1}{1 + M_0\,c_{\text{osmolal}}}$$
+            <div class="cap">Consecuencia: <strong>dos disoluciones con la misma osmolalidad tienen la misma fracción molar de agua</strong>, aunque su composición sea distinta.</div>
+          </div>
+          <p>La osmolaridad es más fácil de usar en la práctica porque se calcula sumando concentraciones molares. Así se estima la osmolaridad plasmática.</p>
+
+          <h3>Concentración equivalente y electroneutralidad</h3>
+          <p>Para un ion de valencia \(z\): concentración equivalente = \(z\,c\). Un equivalente es la carga de un mol de iones monovalentes, un <strong>Faraday</strong> ≈ 96 500 C.</p>
+          <div class="example">
+            <div class="ex-head">✏️ Ejemplo</div>
+            <div class="ex-body">
+              <p>10 mmol/L de CaCl₂ + 5 mmol/L de CaCO₃ contienen 20 mmol/L de Cl⁻, 5 mmol/L de CO₃²⁻ y 15 mmol/L de Ca²⁺.</p>
+              <p>Aniones: 20 + 2 × 5 = <strong>30 mEq/L</strong>. Cationes: 2 × 15 = <strong>30 mEq/L</strong>. Las cargas siempre se igualan: es el <strong>principio de electroneutralidad microscópica</strong>, que se cumple en cualquier volumen que contenga muchos iones.</p>
+            </div>
+          </div>
+
+          <h3>Disoluciones diluidas: las aproximaciones útiles</h3>
+          <p>Si \(c_{\text{osmolal}} < 0.5\) Osm/kg (todas las disoluciones fisiológicas), entonces \(f_{H_2O} > 99\%\) y:</p>
+          <div class="formula">$$c_{i,\text{molal}} \approx \frac{f_i}{M_0} \qquad\qquad \Delta f_{H_2O} \approx -M_0\,\Delta c_{\text{osmolal}}$$
+            <div class="cap">La diferencia de fracción molar del agua entre dos disoluciones es proporcional a su diferencia de osmolalidad. Es la base de la ósmosis (y del módulo 2).</div>
+          </div>
+
+          <div class="widget" id="w-conc">
+            <div class="widget-head"><span class="badge">Calculadora</span><h3>Traductor de concentraciones</h3></div>
+            <div class="widget-body">
+              <p class="hint">Elige un soluto y ajusta los datos. Se muestran todas las formas de expresar la misma disolución.</p>
+              <div class="controls">
+                <div class="ctrl">
+                  <label for="c-solute">Soluto</label>
+                  <select id="c-solute">
+                    <option value="nacl">NaCl (58.5 g/mol, 2 iones)</option>
+                    <option value="glucosa">Glucosa (180 g/mol, no disociada)</option>
+                    <option value="urea">Urea (60 g/mol, no disociada)</option>
+                    <option value="cacl2">CaCl₂ (111 g/mol, 3 iones)</option>
+                    <option value="albumina">Albúmina (70 000 g/mol)</option>
+                  </select>
+                </div>
+                <div class="ctrl">
+                  <label for="c-mass">Masa de soluto (g) <output for="c-mass"></output></label>
+                  <input type="range" id="c-mass" min="0.1" max="60" step="0.1" value="9">
+                </div>
+                <div class="ctrl">
+                  <label for="c-phi">Fracción acuosa φ <output for="c-phi"></output></label>
+                  <input type="range" id="c-phi" min="0.80" max="1" step="0.01" value="1">
+                </div>
+              </div>
+              <p class="small muted">Volumen de disolución fijo: 1 L. Con φ = 1 la disolución es diluida y "sin proteínas".</p>
+              <div class="readout" id="c-out"></div>
+              <div class="verdict" id="c-verdict"></div>
+            </div>
+          </div>
+
+          <div class="callout key"><div class="ttl">💡 Resumen del submódulo</div>
+            <p>De lo más experimental a lo más teórico: <strong>ponderal → molar → molal → fracción molar del soluto</strong>, y <strong>osmolar → osmolal → fracción molar del agua</strong>. Todas son magnitudes <strong>intensivas</strong>: no dependen de la cantidad de disolución y no se suman. Al mezclar dos disoluciones de un mismo compuesto, la concentración resultante queda entre ambas.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 1.4 -->
+        <section class="sub" id="s1-4">
+          <h2><span class="sub-num">1.4</span> El agua en el organismo</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Estimar el agua corporal total con la fórmula de Watson.</li>
+            <li>Repartirla entre los compartimientos celular, intersticial y plasmático.</li>
+            <li>Explicar qué separa a cada compartimiento y qué puede atravesarlo.</li>
+          </ul></div>
+
+          <p>Claude Bernard llamó <strong>medio interno</strong> al líquido salado extracelular que baña nuestras células. Un <strong>compartimiento líquido</strong> es una noción <em>fisiológica</em>, no necesariamente anatómica: un volumen de composición homogénea. Hay al menos dos, el celular y el extracelular, separados por la membrana celular.</p>
+
+          <h3>Agua total: ≈ 60 % del peso</h3>
+          <p>Varía mucho entre personas, sobre todo por el tejido adiposo, que solo contiene ≈ 10 % de agua. El porcentaje es menor en la <strong>mujer</strong>, en el <strong>anciano</strong> y en el <strong>obeso</strong>, y mayor en el niño y el delgado.</p>
+
+          <div class="widget" id="w-watson">
+            <div class="widget-head"><span class="badge">Calculadora</span><h3>Fórmula de Watson y reparto por compartimientos</h3></div>
+            <div class="widget-body">
+              <div class="controls">
+                <div class="ctrl"><label for="w-sex">Sexo</label>
+                  <select id="w-sex"><option value="m">Varón</option><option value="f">Mujer</option></select></div>
+                <div class="ctrl"><label for="w-h">Altura (cm) <output for="w-h"></output></label><input type="range" id="w-h" min="140" max="205" value="175"></div>
+                <div class="ctrl"><label for="w-w">Peso (kg) <output for="w-w"></output></label><input type="range" id="w-w" min="40" max="140" value="70"></div>
+                <div class="ctrl" id="w-age-ctrl"><label for="w-a">Edad (años) <output for="w-a"></output></label><input type="range" id="w-a" min="18" max="95" value="30"></div>
+              </div>
+              <div class="grid-2" style="align-items:center;margin:0">
+                <div class="chart-box"><canvas id="watson-chart" aria-label="Reparto del agua corporal"></canvas></div>
+                <div>
+                  <div class="readout" id="w-out" style="grid-template-columns:repeat(2,minmax(0,1fr))"></div>
+                  <p class="small muted" style="margin-top:10px">Varón: ACT = 0.1074·altura + 0.3362·peso − 0.09516·edad + 2.447.<br>Mujer: ACT = 0.1069·altura + 0.2466·peso − 2.097.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Compartimiento</th><th class="num">% del agua total</th><th class="num">Hombre de 70 kg (42 L)</th><th>Límite</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Celular</strong></td><td class="num">60 %</td><td class="num">≈ 25 L</td><td>Membrana celular</td></tr>
+                <tr><td><strong>Extracelular</strong></td><td class="num">40 %</td><td class="num">≈ 17 L</td><td>—</td></tr>
+                <tr><td>&nbsp;&nbsp;↳ Intersticial (extravascular)</td><td class="num">28 %</td><td class="num">≈ 12 L</td><td>Endotelio capilar</td></tr>
+                <tr><td>&nbsp;&nbsp;↳ Plasmático (intravascular)</td><td class="num">12 %</td><td class="num">≈ 5 L</td><td>Endotelio capilar</td></tr>
+                <tr><td>Transcelular</td><td class="num">≈ 2 %</td><td class="num">&lt; 1 L</td><td>Epitelios</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>La pared capilar: un filtro selectivo</h3>
+          <ul>
+            <li>Entre los vasos, <strong>solo los capilares</strong> permiten intercambios. Arterias y venas son impermeables; si no lo fueran, la sangre perdería sus nutrientes antes de llegar a la periferia.</li>
+            <li>El capilar deja pasar el agua y los solutos <strong>micromoleculares</strong> (Na⁺, glucosa), pero no los <strong>macromoleculares</strong> (albúmina, globulinas). Por eso la concentración de proteínas del intersticio es despreciable frente a la del plasma.</li>
+            <li>Aun así, plasma e intersticio no son idénticos. Las proteínas plasmáticas, cargadas negativamente y retenidas, generan una diferencia de potencial (<strong>efecto Donnan</strong>), negativa del lado plasmático. Retiene cationes difusibles en el plasma y aniones en el intersticio. Por eso el Cl⁻ es mayor en el intersticio (114 frente a 103 mEq/L).</li>
+          </ul>
+
+          <h3>Líquidos transcelulares y "tercer sector"</h3>
+          <p>Líquido cefalorraquídeo, secreciones digestivas y líquidos de serosas (pleura, peritoneo, sinovial). Están separados del extracelular por un epitelio, que les da una composición propia. Suman ≈ 2 % del agua total, pero en patología pueden crecer mucho: es el <strong>tercer sector</strong>, como la ascitis o el derrame pleural.</p>
+
+          <h3>El compartimiento vascular y el hematocrito</h3>
+          <p>La sangre contiene agua extracelular (plasma) y agua celular (glóbulos). El <strong>hematocrito</strong> es la fracción del volumen sanguíneo ocupada por las células: <strong>0.46 ± 0.06</strong> en el hombre y <strong>0.42 ± 0.06</strong> en la mujer. En la sangre el reparto es ≈ 45 % celular / 55 % extracelular, muy distinto del 60/40 del resto del organismo.</p>
+
+          <div class="callout warn"><div class="ttl">⚠️ Límite del modelo</div>
+            <p>Tratar todo el medio celular como un único compartimiento es una aproximación: un eritrocito, una fibra muscular y una neurona tienen composiciones distintas. Solo se puede dar una composición <em>media</em>.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 1.5 -->
+        <section class="sub" id="s1-5">
+          <h2><span class="sub-num">1.5</span> Los solutos: quién está dónde</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Recordar el ionograma plasmático y compararlo con el intersticial y el celular.</li>
+            <li>Explicar por qué la urea es osmóticamente ineficaz y la glucosa no.</li>
+            <li>Interpretar los "aniones no dosificados" y la pseudohiponatremia.</li>
+          </ul></div>
+
+          <p>Todos los compartimientos tienen una osmolalidad de <strong>≈ 300 mOsm/kg de agua</strong>. Lo que cambia es <em>quién</em> aporta esos osmoles.</p>
+
+          <div class="grid-2">
+            <div class="mini">
+              <h4>Solutos neutros importantes</h4>
+              <ul>
+                <li><strong>Urea ≈ 5 mmol/L:</strong> atraviesa libremente capilar y membrana celular, como el agua. Tiene la misma concentración en todos los compartimientos: es <strong>osmóticamente ineficaz</strong>.</li>
+                <li><strong>Glucosa ≈ 5 mmol/L:</strong> atraviesa el capilar, pero solo entra en la mayoría de las células gracias a la insulina, y allí se metaboliza rápido. Es <strong>osmóticamente eficaz</strong>, aunque solo pesa en la osmolaridad si hay hiperglucemia importante (diabetes).</li>
+              </ul>
+              <p class="small muted">Los demás solutos neutros (creatinina, etc.) están en µmol/L y no cuentan para la osmolaridad.</p>
+            </div>
+            <div class="mini">
+              <h4>Cationes y aniones</h4>
+              <ul>
+                <li>Solo <strong>Na⁺, K⁺, Ca²⁺ y Mg²⁺</strong> alcanzan el rango mmol/L; el resto (hierro…) está en µmol/L.</li>
+                <li>Extracelular: el <strong>Na⁺ es el 95 % de los cationes</strong>. Con sus aniones acompañantes explica más del 95 % de la osmolaridad iónica.</li>
+                <li>Intracelular: domina el <strong>K⁺</strong>, y los aniones son sobre todo <strong>fosfatos y proteínas</strong>.</li>
+                <li>Aniones extracelulares principales: <strong>Cl⁻ y HCO₃⁻</strong>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="widget" id="w-gamble">
+            <div class="widget-head"><span class="badge">Gráfica</span><h3>Ionograma de los tres compartimientos (gamblegrama)</h3></div>
+            <div class="widget-body">
+              <p class="hint">Cada columna apila cationes y aniones en mEq/L. Fíjate en que ambas columnas de un compartimiento miden lo mismo: es la electroneutralidad. Pasa el cursor por cada bloque para ver su valor.</p>
+              <div class="btn-row"><div class="seg" id="g-seg">
+                <button type="button" class="on" data-c="all">Los tres</button>
+                <button type="button" data-c="pl">Plasma</button>
+                <button type="button" data-c="in">Intersticio</button>
+                <button type="button" data-c="ce">Célula</button>
+              </div></div>
+              <div class="chart-box tall"><canvas id="gamble-chart" aria-label="Gamblegrama"></canvas></div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead>
+                <tr><th>Ion</th><th class="num">Plasma mEq/L</th><th class="num">Plasma mmol/L de agua</th><th class="num">Intersticio mEq/L</th><th class="num">Célula mEq/L</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Na⁺</td><td class="num">142</td><td class="num">150</td><td class="num">144</td><td class="num">10</td></tr>
+                <tr><td>K⁺</td><td class="num">4</td><td class="num">4</td><td class="num">4</td><td class="num">160</td></tr>
+                <tr><td>Ca²⁺ ionizado</td><td class="num">3</td><td class="num">1.5</td><td class="num">3</td><td class="num">4</td></tr>
+                <tr><td>Mg²⁺ ionizado</td><td class="num">2</td><td class="num">1</td><td class="num">2</td><td class="num">38</td></tr>
+                <tr><th>Total cationes</th><th class="num">151</th><th></th><th class="num">153</th><th class="num">212</th></tr>
+                <tr><td>Cl⁻</td><td class="num">103</td><td class="num">109</td><td class="num">114</td><td class="num">6</td></tr>
+                <tr><td>HCO₃⁻</td><td class="num">26</td><td class="num">28</td><td class="num">29</td><td class="num">8</td></tr>
+                <tr><td>Fosfatos</td><td class="num">2</td><td class="num">1.25</td><td class="num">2</td><td class="num">140</td></tr>
+                <tr><td>Proteínas</td><td class="num">16</td><td class="num">1</td><td class="num">4</td><td class="num">55</td></tr>
+                <tr><td>Otros</td><td class="num">4</td><td class="num">3</td><td class="num">4</td><td class="num">3</td></tr>
+                <tr><th>Total aniones</th><th class="num">151</th><th></th><th class="num">153</th><th class="num">212</th></tr>
+              </tbody>
+              <caption>Valores orientativos (cada ion tiene un intervalo normal). Célula: estimación media en concentraciones molales.</caption>
+            </table>
+          </div>
+
+          <h3>Detalles que suelen preguntar</h3>
+          <ul>
+            <li><strong>Proteínas:</strong> ≈ 1 mmol/L pero ≈ 16 mEq/L, porque cada molécula lleva unas 16 cargas negativas al pH del plasma. En el intersticio su concentración molar es despreciable, pero su concentración equivalente no.</li>
+            <li><strong>Fosfatos:</strong> ≈ 4/5 son divalentes (HPO₄²⁻) y 1/5 monovalentes (H₂PO₄⁻). Por eso los mEq superan a los mmol.</li>
+            <li><strong>Calcio:</strong> calcemia total ≈ 2.5 mmol/L, de los que solo 1.5 están ionizados. El resto, unido a proteínas o citrato, no aporta carga libre ni osmoles propios.</li>
+            <li><strong>Cloruro:</strong> está en la concentración "necesaria y suficiente" para asegurar la electroneutralidad; no tiene regulación específica.</li>
+            <li><strong>Ionograma sanguíneo</strong> hospitalario: Na⁺, K⁺, Cl⁻, HCO₃⁻, más glucosa y urea. El resto son "aniones y cationes no dosificados".</li>
+          </ul>
+
+          <div class="callout note"><div class="ttl">🔢 Consecuencia numérica</div>
+            <p>Con los valores de la tabla: Na⁺ + K⁺ − Cl⁻ − HCO₃⁻ = 142 + 4 − 103 − 26 = <strong>17 mEq/L</strong>. Es exactamente la diferencia entre aniones no dosificados (16 + 2 + 4 = 22) y cationes no dosificados (3 + 2 = 5). La electroneutralidad obliga a que cuadre.</p>
+          </div>
+
+          <div class="callout key"><div class="ttl">💡 Osmolalidad total, eficaz e iónica</div>
+            <p>Osmolalidad iónica (≈ 298) + glucosa (5) = <strong>osmolalidad eficaz</strong>. Eficaz + urea (5) = <strong>osmolalidad total</strong>. Esta distinción es el centro del módulo 2.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 1.6 -->
+        <section class="sub" id="s1-6">
+          <h2><span class="sub-num">1.6</span> Medir un compartimiento sin vaciarlo: el método de dilución</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Aplicar \(V = m/c_{eq}\) y enumerar sus cuatro condiciones de validez.</li>
+            <li>Elegir el trazador adecuado para plasma, agua extracelular y agua total.</li>
+            <li>Deducir los volúmenes que no se miden directamente.</li>
+          </ul></div>
+
+          <p>¿Cómo medir el volumen de un recipiente opaco sin vaciarlo? Se añade una cantidad conocida \(m\) de un colorante, se agita y se mide su concentración \(c\) en una muestra: \(V = m/c\). En el organismo se hace lo mismo con un <strong>trazador</strong> no tóxico. Se inyecta por vía intravenosa y la muestra también se toma del plasma, el único compartimiento accesible.</p>
+
+          <div class="formula">$$V = \frac{m}{c_{eq}}$$<div class="cap">\(m\): cantidad inyectada (corregida por lo eliminado o metabolizado) · \(c_{eq}\): concentración plasmática en equilibrio.</div></div>
+
+          <div class="grid-2">
+            <div class="mini"><h4>Las 4 condiciones</h4><ol>
+              <li>El trazador se reparte de forma <strong>homogénea</strong> en todo el compartimiento.</li>
+              <li><strong>No difunde</strong> (o no tiene tiempo de difundir) fuera de él.</li>
+              <li>Su cantidad <strong>no cambia</strong>: no se elimina ni se metaboliza, o se corrige lo perdido.</li>
+              <li>Inyectarlo <strong>no modifica el volumen</strong> medido, es decir, no provoca desplazamientos de agua.</li>
+            </ol></div>
+            <div class="mini"><h4>Volúmenes deducidos</h4>
+              <ul>
+                <li>Agua celular = agua total − agua extracelular.</li>
+                <li>Agua intersticial = agua extracelular − agua plasmática.</li>
+                <li>Volumen sanguíneo = volumen plasmático / (1 − hematocrito).</li>
+              </ul>
+              <p class="small muted">Cada resta acumula los errores de las dos medidas.</p>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Se quiere medir</th><th>Trazadores endógenos marcados*</th><th>Trazadores exógenos</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Agua total</strong></td><td>Agua pesada / tritiada*, urea*</td><td>Antipirina</td></tr>
+                <tr><td><strong>Volumen extracelular</strong></td><td>Sulfato (³⁵S)*</td><td>Manitol</td></tr>
+                <tr><td><strong>Volumen plasmático</strong></td><td>Albúmina marcada*</td><td>Azul de Evans (se une a la albúmina)</td></tr>
+              </tbody>
+              <caption>* Marcado con un isótopo radiactivo: se distingue de la molécula propia y se cuantifica midiendo la radiactividad.</caption>
+            </table>
+          </div>
+
+          <div class="callout warn"><div class="ttl">⚠️ Trazadores que fallan (clásico de examen)</div>
+            <ul>
+              <li><strong>Inulina</strong> (≈ 5500 Da): <strong>subestima</strong> el volumen extracelular, porque su tamaño no le deja difundir a todo el espacio a tiempo.</li>
+              <li><strong>Sodio radiactivo</strong>: <strong>sobreestima</strong> el volumen extracelular, porque una parte pequeña pero no despreciable entra en las células.</li>
+              <li><strong>Manitol</strong> (180 Da, igual que la glucosa) y <strong>sulfato-³⁵S</strong> son los más adecuados. El sulfato es más cómodo porque apenas se elimina durante la medida.</li>
+            </ul>
+          </div>
+
+          <div class="widget" id="w-tracer">
+            <div class="widget-head"><span class="badge">Simulador</span><h3>Inyecta un trazador y mide el volumen</h3></div>
+            <div class="widget-body">
+              <p class="hint">Organismo modelo: agua celular 25 L, intersticial 12 L y plasmática 5 L. Se inyectan 1000 unidades en el plasma. Cuando el trazador se reparta, se mide su concentración plasmática y se calcula m/c.</p>
+              <div class="controls">
+                <div class="ctrl"><label for="t-tracer">Trazador</label>
+                  <select id="t-tracer">
+                    <option value="evans">Azul de Evans (plasma)</option>
+                    <option value="inulin">Inulina (difunde lento)</option>
+                    <option value="mannitol" selected>Manitol</option>
+                    <option value="sodium">Sodio radiactivo</option>
+                    <option value="water">Agua tritiada</option>
+                    <option value="potassium">Potasio radiactivo</option>
+                  </select>
+                </div>
+              </div>
+              <div class="btn-row">
+                <button type="button" class="btn primary" id="t-inject">▶ Inyectar y esperar el equilibrio</button>
+                <button type="button" class="btn" id="t-reset">Reiniciar</button>
+              </div>
+              <div class="viz"><canvas id="tracer-canvas" aria-label="Simulación de trazador"></canvas></div>
+              <div class="readout" id="t-out"></div>
+              <div class="verdict" id="t-verdict">Elige un trazador y pulsa «Inyectar».</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================ 1.7 -->
+        <section class="sub" id="s1-7">
+          <h2><span class="sub-num">1.7</span> Volumen de distribución y contenido intercambiable</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Distinguir el volumen de un compartimiento del volumen de distribución de un soluto.</li>
+            <li>Predecir si \(V_D\) es menor, igual o mayor que el agua total.</li>
+            <li>Calcular un contenido intercambiable y una concentración intracelular media.</li>
+          </ul></div>
+
+          <p>Si un soluto se reparte entre compartimientos <em>con concentraciones distintas</em>, \(m/c_{eq}\) ya no es el volumen de ningún compartimiento real. Es su <strong>volumen de distribución</strong>: el volumen que ocuparía si estuviera en todas partes a la concentración plasmática.</p>
+          <div class="formula">$$M = c\,V_e + c_i\,V_i \quad\Longrightarrow\quad V_D = \frac{M}{c} = V_e + V_i\,\frac{c_i}{c}$$<div class="cap">\(c\): concentración extracelular (plasmática) · \(c_i\): intracelular · \(M\): contenido intercambiable.</div></div>
+
+          <div class="widget" id="w-vd">
+            <div class="widget-head"><span class="badge">Interactivo</span><h3>¿Cuánto vale V<sub>D</sub>?</h3></div>
+            <div class="widget-body">
+              <div class="controls">
+                <div class="ctrl"><label for="vd-ratio">Cociente c<sub>i</sub> / c (escala log) <output for="vd-ratio"></output></label><input type="range" id="vd-ratio" min="-2" max="1.7" step="0.01" value="-1.1"></div>
+                <div class="ctrl"><label for="vd-ve">V<sub>e</sub> (L) <output for="vd-ve"></output></label><input type="range" id="vd-ve" min="10" max="22" step="0.5" value="17"></div>
+                <div class="ctrl"><label for="vd-vi">V<sub>i</sub> (L) <output for="vd-vi"></output></label><input type="range" id="vd-vi" min="15" max="32" step="0.5" value="25"></div>
+              </div>
+              <div class="btn-row">
+                <button type="button" class="btn sm" data-vd="0">Manitol (c<sub>i</sub>=0)</button>
+                <button type="button" class="btn sm" data-vd="0.07">Sodio (≈10/144)</button>
+                <button type="button" class="btn sm" data-vd="1">Urea (c<sub>i</sub>=c)</button>
+                <button type="button" class="btn sm" data-vd="40">Potasio (160/4)</button>
+              </div>
+              <div class="chart-box" style="height:200px"><canvas id="vd-chart" aria-label="Volumen de distribución"></canvas></div>
+              <div class="verdict" id="vd-verdict"></div>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Soluto</th><th>Reparto</th><th>Volumen de distribución</th></tr></thead>
+              <tbody>
+                <tr><td>Manitol</td><td>Solo extracelular (\(c_i = 0\))</td><td>\(V_D = V_e\)</td></tr>
+                <tr><td>Sodio</td><td>Sobre todo extracelular (\(c \gg c_i\))</td><td>\(V_e < V_D < V\) (≈ 15 % mayor que V<sub>e</sub>)</td></tr>
+                <tr><td>Urea</td><td>Libre en toda el agua (\(c_i = c\))</td><td>\(V_D = V\) (agua total)</td></tr>
+                <tr><td>Potasio</td><td>Sobre todo intracelular (\(c_i \gg c\))</td><td>\(V_D > V\): ¡mayor que el agua corporal!</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Solutos endógenos: el truco del isótopo</h3>
+          <p>No podemos inyectar "más sodio" y medir, porque no conocemos cuánto sodio había. Se supone que un isótopo radiactivo del mismo ion se comporta igual. Se inyecta una cantidad \(m^*\), se mide \(c^*\) en equilibrio y:</p>
+          <div class="formula">$$V_{Na} = \frac{m^*}{c^*} \qquad\qquad M = c\,V_D = m^*\,\frac{c}{c^*}$$
+          <div class="cap">\(c\): natremia del paciente. \(M\) es el <strong>contenido intercambiable</strong>, la fracción que puede intercambiarse con el exterior. El sodio óseo no intercambiable solo se mide post mortem, por incineración.</div></div>
+
+          <h3>Concentración intracelular media</h3>
+          <div class="formula">$$c_i = c\,\frac{V_D - V_e}{V_i}$$</div>
+          <div class="callout warn"><div class="ttl">⚠️ Sensibilidad del cálculo</div>
+            <p>Para el sodio, \(V_D\) es muy cercano a \(V_e\), así que la resta \(V_D - V_e\) es pequeña y cualquier error en \(V_e\) altera mucho \(c_i\). Por eso hay que distinguir con cuidado el volumen extracelular (medido con sulfato) del volumen de distribución del sodio. En el caso 1-B verás que usar la inulina casi duplica el error.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 1.8 -->
+        <section class="sub" id="s1-8">
+          <h2><span class="sub-num">1.8</span> Casos resueltos</h2>
+          <p>Intenta resolver cada caso antes de desplegar la solución. Datos útiles: \(M_0 = 0.018\) kg/mol; M(Na) = 23 g/mol.</p>
+
+          <details class="case">
+            <summary>Caso 1-A · Fracción molar del agua en el plasma</summary>
+            <div class="case-body">
+              <p>Natremia 140 mmol/L, osmolalidad 310 mOsm/kg de agua, φ = 0.93. a) Fracción molar del agua. b) Molalidad y fracción molar del sodio. c) Si el intersticio tiene 1 mOsm/kg menos por su escasez de proteínas, ¿cuánto difieren las fracciones molares del agua?</p>
+              <ol>
+                <li>\(f_{H_2O} = 1/(1 + 0.018 \times 0.310) = 1/1.00558 = \mathbf{0.99445}\). Incluso el plasma es un 99.4 % agua en moles.</li>
+                <li>\(c_{Na,\text{molal}} = 140/0.93 = \mathbf{150.5}\) mmol/kg; \(f_{Na} \approx M_0\,c = 0.018 \times 0.1505 = \mathbf{2.7 \times 10^{-3}}\).</li>
+                <li>\(\Delta f_{H_2O} = M_0\,\Delta c = 0.018 \times 0.001 = \mathbf{1.8 \times 10^{-5}}\), a favor del intersticio. Diferencias minúsculas de fracción molar bastan para mover agua.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 1-B · Pseudohiponatremia: fotometría frente a electrodo</summary>
+            <div class="case-body">
+              <p>1 mL de plasma de un sujeto sano A contiene 3.22 mg de Na (fotometría de llama). Un electrodo selectivo introducido directamente mide 150 mmol/kg de agua. Hay dos cadenas de medida: la cadena 1 diluye la muestra 10 veces y multiplica por 10; la cadena 2 mide sin diluir y multiplica por un factor k. El paciente B tiene una hiperproteinemia con φ = 0.87 y la misma molalidad de sodio que A.</p>
+              <ol>
+                <li><strong>Natremia de A:</strong> 3.22 g/L ÷ 23 = <strong>140 mmol/L</strong>.</li>
+                <li><strong>Fracción acuosa:</strong> φ = 140/150 = <strong>0.933</strong>.</li>
+                <li><strong>Cadena 1 en A:</strong> 1 mL de plasma aporta 0.140 mmol de Na en 0.933 mL de agua; se añaden 9 mL → 9.933 mL de agua → 14.09 mmol/kg; × 10 = <strong>≈ 141 mmol/L</strong>. Al diluir, el volumen de las proteínas se vuelve despreciable y el resultado se parece a la natremia.</li>
+                <li><strong>Factor de la cadena 2:</strong> k = 140/150 = <strong>0.933</strong>, para que en un sano coincida con la natremia.</li>
+                <li><strong>Paciente B</strong> (molalidad 150, φ = 0.87):
+                  <ul>
+                    <li>Fotometría: 150 × 0.87 = <strong>130.5 mmol/L</strong> → falsa hiponatremia.</li>
+                    <li>Cadena 1 (potenciometría indirecta): 0.1305 mmol en (0.87 + 9) mL → 13.22 × 10 = <strong>132 mmol/L</strong> → también falsa hiponatremia.</li>
+                    <li>Cadena 2 (potenciometría directa): 150 × 0.933 = <strong>140 mmol/L</strong> → normal.</li>
+                  </ul>
+                </li>
+              </ol>
+              <div class="answer"><strong>Conclusión:</strong> cuando baja la fracción acuosa (hiperproteinemia, hiperlipidemia), la natremia "por litro de plasma" baja aunque la concentración que ven las células (molal) sea normal. Es la <strong>hiponatremia isotónica o pseudohiponatremia</strong>, y solo la potenciometría directa la desenmascara.</div>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 1-C · Medición completa de compartimientos (adaptado)</summary>
+            <div class="case-body">
+              <p>Adulto de 70 kg con φ plasmática = 0.94. Tras vaciar la vejiga se inyectan 1800 u de albúmina marcada, 2600 u de urea marcada y 28 g de manitol. Horas después: hematocrito 40 %; 2.5 mL de sangre contienen 0.9 u de albúmina; el plasma contiene 1.41 g/L de manitol y 0.047 u/mL de urea marcada; la orina (250 mL) contiene 11.2 g/L de manitol y 2 u/mL de urea marcada.</p>
+              <ol>
+                <li><strong>Volumen plasmático:</strong> 2.5 mL de sangre al 40 % de hematocrito contienen 1.5 mL de plasma → 0.6 u/mL → 1800/0.6 = <strong>3.0 L</strong>. Volumen sanguíneo = 3.0/(1 − 0.40) = <strong>5.0 L</strong>.</li>
+                <li><strong>Agua extracelular:</strong> manitol restante = 28 − 0.25 × 11.2 = 25.2 g. Concentración molal = 1.41/0.94 = 1.5 g/L de agua → 25.2/1.5 = <strong>16.8 L</strong>. El volumen extracelular es un poco mayor, ≈ 16.98 L, porque suma los 0.18 L que ocupan las proteínas del plasma.</li>
+                <li><strong>Agua total:</strong> urea restante = 2600 − 250 × 2 = 2100 u; molal = 0.047/0.94 = 0.05 u/mL → 2100/0.05 = <strong>42 L = 60 % del peso</strong>. Es agua, no el volumen total de los compartimientos, que además incluye solutos como las proteínas.</li>
+                <li><strong>Fracción extracelular:</strong> 16.8/42 = <strong>40 %</strong> del agua total.</li>
+              </ol>
+              <p><strong>Segunda parte:</strong> se inyectan 2700 u de ²⁴Na; en 1400 mL de orina se recuperan 500 u. Natremia 141 mmol/L, ²⁴Na plasmático 0.1 u/mL, Na intersticial 143 mmol/L.</p>
+              <ol start="5">
+                <li>V<sub>Na</sub> (en agua) = 2200 u ÷ (0.1/0.94) = <strong>20.7 L</strong>, un 23 % mayor que el agua extracelular (16.8 L).</li>
+                <li>Na intercambiable = 150 mmol/kg de agua × 20.7 L ≈ <strong>3100 mmol ≈ 44 mmol/kg</strong> de peso.</li>
+                <li>Na extracelular: plasma 2.82 L × 150 + intersticio 13.98 L × 143 ≈ 2422 mmol. Na celular ≈ 680 mmol en 25.2 L → <strong>≈ 27 mmol/L</strong>.</li>
+                <li>Si se tomara como agua extracelular el volumen de la inulina (1/3 del agua total = 14 L), saldría un Na celular de ≈ 1080 mmol en 28 L → <strong>≈ 39 mmol/L</strong>. Subestimar V<sub>e</sub> infla mucho la concentración celular calculada.</li>
+              </ol>
+            </div>
+          </details>
+        </section>
+
+        <!-- ============================================================ QUIZ -->
+        <section class="sub" id="evaluacion">
+          <h2><span class="sub-num">✓</span> Evaluación del módulo 1</h2>
+          <p>30 preguntas de nivel universitario con una sola respuesta correcta. Al calificar verás la explicación de cada una y los temas que debes repasar.</p>
+          <div class="quiz-root"></div>
+          <div class="pager">
+            <a class="btn" href="index.html">← Inicio</a>
+            <a class="btn primary" href="modulo-2.html">Módulo 2: agua y sodio →</a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

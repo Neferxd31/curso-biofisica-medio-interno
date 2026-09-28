@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Equilibrio Ácido-Base</title>
+  <meta name="description" content="Módulo 3: pH, ácidos y bases, tampones abiertos y cerrados, origen y eliminación de H+, trastornos ácido-base y diagrama de Davenport interactivo.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/js/core.js"></script>
+  <script defer src="assets/js/quiz-m3.js"></script>
+  <script defer src="assets/js/m3.js"></script>
+</head>
+<body class="m3" data-module="m3">
+  <header class="topbar">
+    <button class="icon-btn menu-btn" type="button" aria-label="Abrir índice">☰</button>
+    <a class="brand" href="index.html"><span class="brand-logo">Bф</span></a>
+    <span class="crumb">Módulo 3 · Equilibrio ácido-base</span>
+    <span class="spacer"></span>
+    <button class="icon-btn" data-theme-toggle type="button">☾</button>
+    <span class="progress-top"></span>
+  </header>
+  <div class="scrim"></div>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h4>Módulo 3</h4>
+      <div class="side-progress">
+        <div class="bar"><span></span></div>
+        <div class="lbl"><span>Leído: <b class="pct">0%</b></span><span class="best"></span></div>
+      </div>
+      <ul class="toc"></ul>
+      <div class="side-nav">
+        <a href="modulo-2.html">← Módulo 2: agua y sodio</a>
+        <a href="index.html">Inicio</a>
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="content-inner">
+
+        <div class="mod-hero">
+          <svg class="deco" viewBox="0 0 100 100" aria-hidden="true"><text x="8" y="72" font-size="62" font-weight="800" fill="currentColor">pH</text></svg>
+          <div class="eyebrow">Módulo 3</div>
+          <h1>Equilibrio ácido-base</h1>
+          <p class="lead">El pH del medio interno se mantiene en 7.40 ± 0.02 a pesar de que producimos a diario unos 20 000 mmol de ácido. En este módulo verás cómo lo consiguen tampones, pulmones y riñones, y aprenderás a interpretar cualquier gasometría con el diagrama de Davenport.</p>
+          <div class="stats">
+            <span class="chip">11 submódulos + casos</span>
+            <span class="chip">Diagrama de Davenport interactivo</span>
+            <span class="chip">Evaluación de 30 preguntas</span>
+          </div>
+        </div>
+
+        <!-- ============================================================ 3.1 -->
+        <section class="sub" id="s3-1">
+          <h2><span class="sub-num">3.1</span> El pH y la disociación del agua</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Explicar por qué el pH es vital y por qué se mide en sangre arterial.</li>
+            <li>Calcular el pH neutro a 25 °C y a 37 °C.</li>
+            <li>Distinguir la neutralidad ácido-base de la neutralidad eléctrica.</li>
+          </ul></div>
+
+          <p>Casi todas las enzimas necesitan un pH muy preciso para funcionar a la velocidad adecuada. Como la mayoría de las reacciones ocurren dentro de las células, lo que hay que proteger es el pH <strong>intracelular</strong>, pero no se puede medir de rutina. En la práctica se vigila y se corrige el pH <strong>plasmático</strong>.</p>
+          <div class="callout note"><div class="ttl">🔬 ¿Por qué el pH intracelular es más ácido?</div>
+            <p>Por el potencial de membrana de reposo: el interior negativo atrae cationes, incluido el H⁺, que se concentra más dentro (equilibrio de Donnan). Por eso el pH extracelular es más básico que el celular.</p>
+          </div>
+
+          <h3>El agua se disocia (muy poco)</h3>
+          <p>H₂O ⇌ H⁺ + OH⁻. (En realidad el H⁺ va unido a una molécula de agua como H₃O⁺, pero se escribe H⁺ por sencillez.) Como el agua está en enorme exceso, su concentración se trata como constante:</p>
+          <div class="formula">$$K_{H_2O} = [\text{H}^+][\text{OH}^-] = 10^{-14}\ \text{mol}^2/\text{L}^2\ \ (25\,^\circ\text{C})$$
+            <div class="cap">En agua pura [H⁺] = [OH⁻] = 10⁻⁷ mol/L = 0.1 µmol/L: un H⁺ y un OH⁻ por cada ~550 millones de moléculas de agua (1 L ≈ 55 mol de agua).</div>
+          </div>
+          <div class="formula">$$\text{pH} = -\log_{10}[\text{H}^+]\ \ (\text{mol/L})$$
+            <div class="cap">Formalmente, el cociente entre [H⁺] y una referencia de 1 mol/L, porque solo se puede tomar el logaritmo de un número sin dimensiones.</div>
+          </div>
+
+          <div class="grid-2">
+            <div class="mini"><h4>A 25 °C</h4><p>K = 10⁻¹⁴ → pH neutro = <strong>7.0</strong></p></div>
+            <div class="mini"><h4>A 37 °C</h4><p>La disociación crece con la temperatura: K ≈ 2.5 × 10⁻¹⁴ = 10⁻¹³·⁶ → pH neutro = <strong>6.8</strong>. El plasma (7.40) es <strong>0.6 unidades más básico</strong> que la neutralidad.</p></div>
+          </div>
+
+          <div class="callout warn"><div class="ttl">⚠️ Dos neutralidades distintas</div>
+            <p><strong>Neutralidad eléctrica:</strong> carga de cationes = carga de aniones. Se cumple <em>siempre</em>. <strong>Neutralidad ácido-base:</strong> [H⁺] = [OH⁻]. Una solución siempre es eléctricamente neutra, pero puede ser ácida o básica.</p>
+          </div>
+
+          <div class="widget" id="w-ph">
+            <div class="widget-head"><span class="badge">Interactivo</span><h3>Escala de pH y concentración de H⁺</h3></div>
+            <div class="widget-body">
+              <div class="controls"><div class="ctrl"><label for="ph-in">pH del plasma <output for="ph-in"></output></label><input type="range" id="ph-in" min="6.6" max="8.0" step="0.01" value="7.40"></div></div>
+              <div id="ph-bar" style="position:relative;height:46px;margin:6px 0 30px"></div>
+              <div class="readout" id="ph-out"></div>
+              <div class="verdict" id="ph-verdict"></div>
+            </div>
+          </div>
+          <p class="small muted">Escala logarítmica: bajar el pH 0.3 unidades <strong>duplica</strong> la [H⁺]. El intervalo compatible con la vida (pH 6.8–7.8) equivale a ≈ 16–160 nmol/L.</p>
+        </section>
+
+        <!-- ============================================================ 3.2 -->
+        <section class="sub" id="s3-2">
+          <h2><span class="sub-num">3.2</span> Ácidos, bases y pares conjugados</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Definir ácido, base, K<sub>A</sub> y pK.</li>
+            <li>Distinguir electrolitos fuertes y débiles.</li>
+            <li>Usar la relación pK<sub>A</sub> + pK<sub>B</sub> = pK<sub>H₂O</sub>.</li>
+          </ul></div>
+
+          <div class="grid-2">
+            <div class="mini"><h4>Ácido</h4><p>Sustancia cuya disociación <strong>aumenta</strong> la [H⁺]: libera H⁺ (XH → X⁻ + H⁺) o fija OH⁻ (XH + OH⁻ → X⁻). Como [H⁺][OH⁻] es constante, al subir el H⁺ baja el OH⁻.</p></div>
+            <div class="mini"><h4>Base</h4><p>Sustancia cuya disociación <strong>disminuye</strong> la [H⁺]: fija H⁺ (XOH + H⁺ → X⁺) o libera OH⁻ (XOH → X⁺ + OH⁻).</p></div>
+          </div>
+
+          <div class="formula">$$K_A = \frac{[\text{X}^-][\text{H}^+]}{[\text{XH}]} \qquad pK = -\log_{10} K_A$$</div>
+          <ul>
+            <li><strong>Ácido fuerte:</strong> K<sub>A</sub> tan alto que la disociación es total y la forma XH es despreciable. <strong>Ácido débil:</strong> disociación parcial. Lo mismo vale para las bases.</li>
+            <li>No confundas K<sub>A</sub> (disociación XH ⇌ X⁻ + H⁺) con K'<sub>A</sub> (reacción XH + OH⁻ ⇌ X⁻, que no es una disociación): \(K_A = K'_A\cdot K_{H_2O}\), así que pK<sub>A</sub> − pK'<sub>A</sub> = 14 a 25 °C.</li>
+          </ul>
+
+          <h3>Pares conjugados</h3>
+          <p>En XH ⇌ X⁻ + H⁺, X⁻ es la <strong>base conjugada</strong> de XH, porque puede fijar H⁺. Cuanto más tiende XH a ceder su protón, menos tiende X⁻ a recuperarlo:</p>
+          <div class="formula">$$K_A\,K_B = [\text{H}^+][\text{OH}^-] = K_{H_2O} \quad\Longrightarrow\quad pK_A + pK_B = pK_{H_2O}\ (=14\ \text{a}\ 25\,^\circ\text{C})$$
+            <div class="cap">Ácido fuerte ↔ base conjugada débil. Por convenio, un par se caracteriza por el pK de su forma ácida.</div>
+          </div>
+          <div class="callout clinic"><div class="ttl">🩺 Ejemplo renal: el par NH₄⁺/NH₃</div>
+            <p>El pK del NH₄⁺ (9.2) es muy superior al pH de la orina (4–7). El NH₄⁺ casi no se disocia: su base conjugada, el NH₃, se comporta como una base fuerte y <strong>cada NH₃ fija un H⁺</strong> en la orina.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 3.3 -->
+        <section class="sub" id="s3-3">
+          <h2><span class="sub-num">3.3</span> Sistemas tampón y ecuación de Henderson-Hasselbalch</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Aplicar Henderson-Hasselbalch y definir el poder tampón.</li>
+            <li>Predecir cuándo un tampón es más eficaz y cuándo se agota.</li>
+            <li>Estimar el grado de disociación de un ácido débil según pK − pH.</li>
+          </ul></div>
+
+          <p>Un <strong>tampón</strong> es una mezcla de un ácido débil AH y su base conjugada A⁻ en proporciones del mismo orden (entre 1:10 y 10:1). La base conjugada suele venir de una sal totalmente disociada (NaA) o de titular parcialmente el ácido con una base fuerte. Amortigua los cambios de pH: añadir ácido o base lo cambia mucho menos que en agua pura.</p>
+          <p>En presencia de A⁻, la disociación propia de AH queda casi anulada, así que [AH] ≈ c<sub>AH</sub> y [A⁻] ≈ c<sub>A⁻</sub>:</p>
+          <div class="formula">$$\text{pH} = pK_A + \log_{10}\frac{c_{A^-}}{c_{AH}}$$<div class="cap">Ecuación de Henderson-Hasselbalch.</div></div>
+
+          <h3>Poder tampón</h3>
+          <p>La <strong>capacidad tamponadora</strong> es |cantidad de H⁺ añadida / ΔpH|. Es proporcional al volumen, así que se usa el <strong>poder tampón</strong>, por litro:</p>
+          <div class="formula">$$\beta = \left|\frac{\Delta x}{\Delta \text{pH}}\right| \quad \text{(mEq de H}^+\text{ por litro y por unidad de pH)}$$</div>
+          <p>Si se añaden x mmol/L de H⁺ con x &lt; c<sub>A⁻</sub>, casi todos los H⁺ se unen a A⁻: \(\text{pH} = pK + \log\frac{c_{A^-}-x}{c_{AH}+x}\). No es contradictorio que el pH baje unos nanomoles de H⁺ libres mientras el resto queda atrapado. Si x ≥ c<sub>A⁻</sub>, el tampón se <strong>agota</strong>: el exceso de H⁺ queda libre y el pH se desploma.</p>
+          <ul>
+            <li>El poder tampón es <strong>máximo cuando pH = pK</strong> (la curva es más plana).</li>
+            <li>Es proporcional a la <strong>concentración total</strong> c<sub>A⁻</sub> + c<sub>AH</sub>.</li>
+            <li>Diluir un tampón <strong>reduce su poder</strong>, pero <strong>no cambia su pH</strong> (la relación A⁻/AH se mantiene).</li>
+          </ul>
+
+          <div class="widget" id="w-titr">
+            <div class="widget-head"><span class="badge">Simulador</span><h3>Curva de titulación de un tampón</h3></div>
+            <div class="widget-body">
+              <p class="hint">Eje x: mmol/L de ácido fuerte añadido (a la derecha) o de base fuerte (a la izquierda). La banda sombreada es la zona tampón (pK ± 1). Cálculo exacto por balance de cargas, a 25 °C.</p>
+              <div class="controls">
+                <div class="ctrl"><label for="ti-pk">pK<sub>A</sub> <output for="ti-pk"></output></label><input type="range" id="ti-pk" min="4" max="10" step="0.1" value="6.8"></div>
+                <div class="ctrl"><label for="ti-c">Concentración total (mmol/L) <output for="ti-c"></output></label><input type="range" id="ti-c" min="10" max="120" step="5" value="60"></div>
+                <div class="ctrl"><label for="ti-r">Fracción inicial en forma A⁻ <output for="ti-r"></output></label><input type="range" id="ti-r" min="0.1" max="0.9" step="0.05" value="0.8"></div>
+              </div>
+              <div class="chart-box tall"><canvas id="titr-chart" aria-label="Curva de titulación"></canvas></div>
+              <div class="readout" id="ti-out"></div>
+            </div>
+          </div>
+
+          <h3>¿Cuánto se disocia un ácido débil en una solución tamponada?</h3>
+          <p>Si se introduce un ácido de pK<sub>A</sub> en un medio cuyo pH fija un tampón, su coeficiente de disociación depende solo de pK − pH:</p>
+          <div class="formula">$$\alpha = \frac{1}{1 + 10^{\,pK_A - \text{pH}}}$$</div>
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>pK<sub>A</sub> respecto al pH</th><th class="num">Disociación</th></tr></thead>
+              <tbody>
+                <tr><td>pK = pH − 2 o menor</td><td class="num">&gt; 99 % (casi total)</td></tr>
+                <tr><td>pK = pH − 1</td><td class="num">≈ 91 %</td></tr>
+                <tr><td>pK = pH</td><td class="num">50 %</td></tr>
+                <tr><td>pK = pH + 1</td><td class="num">≈ 9 %</td></tr>
+                <tr><td>pK = pH + 2 o mayor</td><td class="num">&lt; 1 % (casi nula)</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="widget" id="w-alpha">
+            <div class="widget-head"><span class="badge">Gráfica</span><h3>Coeficiente de disociación α en función del pH</h3></div>
+            <div class="widget-body">
+              <div class="controls"><div class="ctrl"><label for="al-pk">pK de un ácido problema <output for="al-pk"></output></label><input type="range" id="al-pk" min="1" max="13" step="0.1" value="4.8"></div></div>
+              <div class="chart-box"><canvas id="alpha-chart" aria-label="Coeficiente de disociación"></canvas></div>
+              <div class="verdict" id="al-verdict"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================ 3.4 -->
+        <section class="sub" id="s3-4">
+          <h2><span class="sub-num">3.4</span> ¿De dónde vienen los H⁺? Ácidos volátiles y fijos</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Describir el par CO₂/HCO₃⁻, su pK y la ley de solubilidad.</li>
+            <li>Cuantificar la producción diaria de ácido volátil, de ácidos fijos minerales y de orgánicos.</li>
+          </ul></div>
+
+          <p>El pH arterial es <strong>7.40 ± 0.02</strong>, es decir, <strong>≈ 40 ± 2 nmol/L</strong> de H⁺ libres. La sangre venosa, más rica en CO₂, es algo más ácida y mucho menos estable (depende del metabolismo local). Por eso la gasometría se hace con sangre <strong>arterial</strong>.</p>
+
+          <h3>El ácido volátil: CO₂</h3>
+          <p>Un ácido volátil puede escapar de la disolución. En el organismo solo lo es el CO₂: disuelto (CO₂d), se comporta como un ácido:</p>
+          <div class="formula">$$\text{CO}_{2d} + \text{H}_2\text{O} \rightleftharpoons \text{H}_2\text{CO}_3 \rightleftharpoons \text{HCO}_3^- + \text{H}^+ \qquad pK_{CO_2} = 6.1\ (37\,^\circ\text{C})$$
+            <div class="cap">A pH 7.40, [HCO₃⁻]/[CO₂d] = 10<sup>1.3</sup> = 20: se comporta como un ácido débil. La segunda disociación (HCO₃⁻ → CO₃²⁻, pK 10.3) es casi nula al pH del organismo.</div>
+          </div>
+          <p>El CO₂d está en equilibrio con el CO₂ gaseoso del alvéolo. Su concentración es proporcional a la presión parcial (ley de solubilidad):</p>
+          <div class="formula">$$[\text{CO}_{2d}] = a\,P_{CO_2} \qquad a = 0.03\ \text{mmol·L}^{-1}\text{·mmHg}^{-1} \quad\Rightarrow\quad 40\ \text{mmHg} \to 1.2\ \text{mmol/L}$$</div>
+          <p>Producción: <strong>15 000–20 000 mmol/día</strong> (&gt; 10 mmol/min), sobre todo por la combustión aeróbica de glúcidos (ciclo de Krebs).</p>
+
+          <h3>Los ácidos fijos</h3>
+          <p>No pueden escapar de la disolución, pero sí salir con ella del recipiente por el "desagüe", que son los riñones. Su pK es inferior al pH del organismo: están totalmente disociados y se comportan como ácidos fuertes.</p>
+          <div class="grid-2">
+            <div class="mini"><h4>Minerales (XH → X⁻ + H⁺)</h4><p>Del catabolismo proteico: <strong>ácido fosfórico</strong> (caseína) y <strong>sulfúrico</strong> (aminoácidos azufrados). ≈ <strong>35 mmol/día</strong>. Sus aniones X⁻ <strong>no son metabolizables</strong>.</p></div>
+            <div class="mini"><h4>Orgánicos (HY → Y⁻ + H⁺)</h4><p><strong>Láctico</strong> (glucólisis anaerobia), pirúvico, cítrico, ácidos grasos. ≈ <strong>2000–2500 mmol/día</strong>. Sus aniones Y⁻ son <strong>metabolizables</strong> casi del todo: solo ≈ 35 mmol/día no lo son.</p></div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-head"><span class="badge">Esquema</span><h3>Glucólisis: el ácido láctico no es una carga neta… si hay oxígeno</h3></div>
+            <div class="widget-body">
+              <svg class="svg-diagram" viewBox="0 0 720 250" role="img" aria-label="Esquema de la glucólisis">
+                <defs><marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker></defs>
+                <rect class="box" x="20" y="95" width="120" height="50" rx="12"/><text x="80" y="125" text-anchor="middle" font-weight="700">Glucosa</text>
+                <rect class="box" x="210" y="95" width="170" height="50" rx="12"/><text x="295" y="117" text-anchor="middle" font-weight="700">2 ácido láctico</text><text x="295" y="134" text-anchor="middle" class="lbl">→ 2 H⁺ + 2 lactato⁻</text>
+                <rect class="box hl" x="460" y="25" width="240" height="50" rx="12"/><text x="580" y="47" text-anchor="middle" font-weight="700">2 lactato⁻ + 6 O₂</text><text x="580" y="64" text-anchor="middle" class="lbl">→ 2 HCO₃⁻ + 4 CO₂ + 4 H₂O</text>
+                <rect class="box" x="460" y="165" width="240" height="50" rx="12"/><text x="580" y="187" text-anchor="middle" font-weight="700">2 HCO₃⁻ + 2 H⁺</text><text x="580" y="204" text-anchor="middle" class="lbl">→ 2 CO₂ + 2 H₂O (neutralizado)</text>
+                <path class="arrow hl flow" d="M140,120 L208,120" marker-end="url(#ah3)"/>
+                <path class="arrow hl flow" d="M380,110 C420,110 420,50 458,50" marker-end="url(#ah3)"/>
+                <path class="arrow hl flow" d="M580,75 L580,163" marker-end="url(#ah3)"/>
+                <text class="lbl" x="170" y="108" text-anchor="middle">anaerobia</text>
+                <text class="lbl" x="440" y="100">aerobia (Krebs)</text>
+                <text class="lbl" x="20" y="240">Sin O₂ (hipoxia) el lactato no se metaboliza → se acumulan H⁺ → acidosis láctica</text>
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================ 3.5 -->
+        <section class="sub" id="s3-5">
+          <h2><span class="sub-num">3.5</span> ¿Cómo se eliminan los H⁺? Metabolismo, pulmón y riñón</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Distinguir las tres vías de eliminación y cuáles consumen bicarbonato.</li>
+            <li>Explicar la excreción renal: acidez titulable y amonio.</li>
+          </ul></div>
+
+          <div class="grid-3">
+            <div class="mini"><h4>Metabolismo</h4><p>El anión orgánico Y⁻ (lactato) se oxida con O₂ y genera HCO₃⁻, que recoge el H⁺ liberado antes. Los 2000–2500 mmol/día de ácidos orgánicos <strong>no suponen una carga neta</strong>, salvo en la <strong>hipoxia</strong> (acidosis láctica, potencialmente mortal).</p></div>
+            <div class="mini"><h4>Pulmón</h4><p>H⁺ + HCO₃⁻ → CO₂d → CO₂ espirado. Elimina la carga ácida <strong>consumiendo bicarbonato</strong>.</p></div>
+            <div class="mini"><h4>Riñón</h4><p>Transporta H⁺ del plasma a la orina <strong>sin consumir bicarbonato</strong>: lo regenera.</p></div>
+          </div>
+
+          <div class="widget">
+            <div class="widget-head"><span class="badge">Animación</span><h3>La célula tubular renal excreta H⁺ y regenera HCO₃⁻</h3></div>
+            <div class="widget-body">
+              <svg class="svg-diagram" viewBox="0 0 760 300" role="img" aria-label="Excreción renal de H+">
+                <rect x="10" y="30" width="200" height="240" rx="14" fill="var(--s8)" opacity="0.12"/>
+                <rect x="250" y="30" width="260" height="240" rx="14" fill="var(--accent)" opacity="0.12" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="550" y="30" width="200" height="240" rx="14" fill="var(--s4)" opacity="0.14"/>
+                <text x="110" y="55" text-anchor="middle" font-weight="800">SANGRE (plasma)</text>
+                <text x="380" y="55" text-anchor="middle" font-weight="800">CÉLULA TUBULAR</text>
+                <text x="650" y="55" text-anchor="middle" font-weight="800">ORINA</text>
+                <text x="380" y="75" text-anchor="middle" class="lbl">rica en anhidrasa carbónica</text>
+                <text x="110" y="110" text-anchor="middle" font-size="14">H⁺ + HCO₃⁻ → CO₂</text>
+                <text x="380" y="130" text-anchor="middle" font-size="15" font-weight="700">CO₂ + H₂O → HCO₃⁻ + H⁺</text>
+                <text x="110" y="220" text-anchor="middle" font-size="14" font-weight="700">HCO₃⁻ regenerado</text>
+                <text x="650" y="120" text-anchor="middle" font-size="13">⅓ · HPO₄²⁻ + H⁺ → H₂PO₄⁻</text>
+                <text x="650" y="138" text-anchor="middle" class="lbl">acidez titulable</text>
+                <text x="650" y="190" text-anchor="middle" font-size="13">⅔ · NH₃ + H⁺ → NH₄⁺</text>
+                <text x="650" y="208" text-anchor="middle" class="lbl">amoniuria (pK 9.2)</text>
+                <path id="p-co2" d="M150,118 C220,118 260,130 300,130" fill="none"/>
+                <path id="p-h" d="M440,138 C500,160 540,150 600,150" fill="none"/>
+                <path id="p-hco3" d="M340,145 C300,200 230,215 170,215" fill="none"/>
+                <path class="arrow flow" d="M150,118 C220,118 260,130 300,130" stroke="var(--muted)"/>
+                <path class="arrow flow" d="M440,138 C500,160 540,150 600,150" stroke="var(--s8)"/>
+                <path class="arrow flow" d="M340,145 C300,200 230,215 170,215" stroke="var(--s1)"/>
+                <g font-size="11" font-weight="800">
+                  <g><circle r="11" fill="var(--muted)"/><text text-anchor="middle" y="4" fill="#fff">CO₂</text><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#p-co2"/></animateMotion></g>
+                  <g><circle r="10" fill="var(--s8)"/><text text-anchor="middle" y="4" fill="#fff">H⁺</text><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite"><mpath href="#p-h"/></animateMotion></g>
+                  <g><circle r="13" fill="var(--s1)"/><text text-anchor="middle" y="4" fill="#fff" font-size="9">HCO₃⁻</text><animateMotion dur="2.4s" begin="0.8s" repeatCount="indefinite"><mpath href="#p-hco3"/></animateMotion></g>
+                </g>
+                <text x="380" y="290" text-anchor="middle" class="lbl">H⁺ excretado = amoniuria + acidez titulable (la orina, pH 4–7, nunca lleva H⁺ libre en cantidad)</text>
+              </svg>
+            </div>
+          </div>
+          <p>El H⁺ excretado no va libre: si lo fuera, la orina sería extraordinariamente ácida y quemaría. Aproximadamente <strong>un tercio</strong> lo neutraliza el tampón <strong>fosfato</strong> y <strong>dos tercios</strong> el <strong>NH₃</strong> sintetizado en el riñón (→ NH₄⁺). La <strong>acidez titulable</strong> son los mEq de base necesarios para llevar la orina a pH 7.40.</p>
+        </section>
+
+        <!-- ============================================================ 3.6 -->
+        <section class="sub" id="s3-6">
+          <h2><span class="sub-num">3.6</span> Los tampones del organismo: abiertos y cerrados</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Clasificar los tampones en abiertos y cerrados y justificar la potencia del bicarbonato.</li>
+            <li>Relacionar las dos formas de titular con lo que mide cada una.</li>
+            <li>Recordar los poderes tampón del plasma, de la sangre in vitro y del organismo in vivo.</li>
+          </ul></div>
+
+          <p>La carga ácida no metabolizada no se elimina donde se produce: debe transportarse hasta los pulmones y los riñones. Mientras tanto, los tampones capturan de inmediato los H⁺ e impiden variaciones bruscas del pH.</p>
+
+          <div class="grid-2">
+            <div class="mini">
+              <h4>Tampón abierto: solo el bicarbonato</h4>
+              <p>CO₂d/HCO₃⁻, sobre todo extracelular. Es "abierto" porque sus dos formas pueden salir del organismo: el CO₂ por el pulmón y el HCO₃⁻ por el riñón. Por eso [HCO₃⁻] + [CO₂d] <strong>no</strong> es constante.</p>
+              <p>$$\text{pH} = 6.1 + \log\frac{[\text{HCO}_3^-]}{[\text{CO}_{2d}]}$$</p>
+            </div>
+            <div class="mini">
+              <h4>Tampones cerrados (fijos)</h4>
+              <p>Fosfatos y proteínas intracelulares, hemoglobina, tampones óseos y proteínas plasmáticas. No pueden salir: están en compartimientos cerrados o son macromoléculas que el riñón no filtra. En conjunto equivalen a un único tampón A⁻/AH con pK útil ≈ 6.8:</p>
+              <p>$$\text{pH} = 6.8 + \log\frac{[\text{A}^-]}{[\text{AH}]} \qquad [\text{A}^-]+[\text{AH}] = \text{cte}$$</p>
+            </div>
+          </div>
+          <p>Como ambos tampones comparten el mismo pH:</p>
+          <div class="formula">$$6.1 + \log\frac{[\text{HCO}_3^-]}{[\text{CO}_{2d}]} = 6.8 + \log\frac{[\text{A}^-]}{[\text{AH}]} \quad\Longrightarrow\quad \frac{[\text{A}^-]}{[\text{AH}]} = \frac{1}{5}\,\frac{[\text{HCO}_3^-]}{[\text{CO}_{2d}]}$$
+            <div class="cap">Al controlar CO₂d (pulmón) y HCO₃⁻ (riñón), el organismo fija también el estado de todos los tampones cerrados. A pH 7.40: HCO₃⁻/CO₂d = 20 y A⁻/AH = 4.</div>
+          </div>
+          <p class="small muted">En el extracelular, los tampones micromoleculares (fosfato) tienen un papel menor. En cambio, el fosfato filtrado y concentrado en la orina es un tampón fundamental.</p>
+
+          <h3>Dos formas de titular, dos cosas distintas</h3>
+          <div class="grid-2">
+            <div class="mini"><h4>Con ácido fijo (HCl), P<sub>CO₂</sub> constante</h4><p>Los H⁺ los captan el bicarbonato <em>y</em> los tampones cerrados. Mide el <strong>poder tampón total</strong>.</p><p>$$\Delta[\text{ácidos fijos}] = -\Delta[\text{HCO}_3^-] - \Delta[\text{A}^-]$$</p></div>
+            <div class="mini"><h4>Con ácido volátil (↑ P<sub>CO₂</sub>)</h4><p>El CO₂ genera un H⁺ por cada HCO₃⁻ que se forma, y ese H⁺ solo pueden captarlo los tampones cerrados. Mide <strong>solo los tampones cerrados</strong>.</p><p>$$\Delta[\text{HCO}_3^-] + \Delta[\text{A}^-] = 0$$</p></div>
+          </div>
+          <div class="formula">$$\Delta[\text{HCO}_3^-] + \Delta[\text{A}^-] = -\Delta[\text{ácidos fijos}]$$<div class="cap">(3-5) Válida para cualquier cambio de ácidos fijos o volátiles. Es la electroneutralidad: [A⁻] + [HCO₃⁻] = [cationes] − [aniones sin poder tampón]. Añadir HCl sube el Cl⁻ (anión no tampón) y baja el segundo miembro.</div></div>
+
+          <div class="widget" id="w-open">
+            <div class="widget-head"><span class="badge">Simulador</span><h3>¿Por qué el bicarbonato abierto es tan eficaz? (añade HCl a 1 L)</h3></div>
+            <div class="widget-body">
+              <p class="hint">Cinco soluciones a pH 7.40. A: sin tampón. B: bicarbonato cerrado (24/1.2). C: tampón A⁻/AH cerrado (48/12, pK 6.8). D: bicarbonato abierto (P<sub>CO₂</sub> fija en 40 mmHg). E: C + D.</p>
+              <div class="controls"><div class="ctrl"><label for="op-x">HCl añadido (mmol/L) <output for="op-x"></output></label><input type="range" id="op-x" min="0" max="20" step="0.5" value="9"></div></div>
+              <div class="chart-box"><canvas id="open-chart" aria-label="Comparación de tampones"></canvas></div>
+              <div class="table-wrap"><table class="data" id="op-table"></table></div>
+              <div class="verdict">Con el <b>bicarbonato cerrado</b> (B), cada H⁺ añadido crea un CO₂ que se acumula y acidifica. Con el <b>abierto</b> (D), ese CO₂ se va (el pulmón mantiene la P<sub>CO₂</sub>) y el cociente HCO₃⁻/CO₂d cae mucho menos. Si además se <b>baja</b> la P<sub>CO₂</sub> (hiperventilación: 25 mmHg con 9 mmol de HCl), el pH vuelve a 7.40: es la <b>compensación respiratoria</b>.</div>
+            </div>
+          </div>
+
+          <h3>Medida del poder tampón con CO₂ (tampones cerrados)</h3>
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Dónde se añade el CO₂</th><th>Qué se mide</th><th class="num">Poder tampón</th></tr></thead>
+              <tbody>
+                <tr><td>Al <strong>plasma</strong> centrifugado</td><td>Proteínas plasmáticas</td><td class="num">≈ 5 mEq·L⁻¹·pH⁻¹</td></tr>
+                <tr><td>A la <strong>sangre</strong> extraída (in vitro)</td><td>Proteínas + hemoglobina</td><td class="num">≈ 30 (= 8.2 + 1.56 × Hb g/dL)</td></tr>
+                <tr><td>Al <strong>paciente</strong>, que respira CO₂ (in vivo)</td><td>Todos los tampones cerrados del organismo</td><td class="num">≈ 22</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout key"><div class="ttl">💡 ¿Por qué in vivo (22) &lt; in vitro (30)?</div>
+            <p>Porque, de media, los tampones cerrados están menos concentrados en el conjunto de los líquidos corporales que en la sangre, que es rica en hemoglobina. Pero la <em>capacidad</em> tampón total in vivo es muy superior: la sangre in vitro es solo ≈ 5 L.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 3.7 -->
+        <section class="sub" id="s3-7">
+          <h2><span class="sub-num">3.7</span> Regulación: el balance de H⁺</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Explicar por qué los tampones no bastan.</li>
+            <li>Repartir la carga ácida diaria entre pulmón, metabolismo y riñón.</li>
+          </ul></div>
+          <p>Los tampones son solo un dispositivo <strong>inercial</strong>: minimizan las variaciones de pH pero no las eliminan, y además son <strong>saturables</strong> (cada H⁺ captado gasta un A⁻ o un HCO₃⁻). Para que el pH y el bicarbonato sean estables, la eliminación debe igualar a la producción:</p>
+
+          <div class="widget">
+            <div class="widget-head"><span class="badge">Esquema</span><h3>Balance diario de H⁺</h3></div>
+            <div class="widget-body">
+              <svg class="svg-diagram" viewBox="0 0 760 300" role="img" aria-label="Balance de H+">
+                <defs><marker id="ah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/></marker></defs>
+                <rect class="box" x="10" y="20" width="220" height="62" rx="12"/><text x="120" y="46" text-anchor="middle" font-weight="700">Ácido volátil CO₂</text><text x="120" y="66" text-anchor="middle" class="lbl">≈ 20 000 mmol/día</text>
+                <rect class="box" x="10" y="119" width="220" height="62" rx="12"/><text x="120" y="145" text-anchor="middle" font-weight="700">Ácidos fijos metabolizados</text><text x="120" y="165" text-anchor="middle" class="lbl">≈ 2000 mmol/día (lactato…)</text>
+                <rect class="box" x="10" y="218" width="220" height="62" rx="12"/><text x="120" y="244" text-anchor="middle" font-weight="700">Ácidos fijos no metabolizables</text><text x="120" y="264" text-anchor="middle" class="lbl">≈ 70 mmol/día (35 + 35)</text>
+                <rect class="box hl" x="300" y="100" width="150" height="100" rx="14"/><text x="375" y="142" text-anchor="middle" font-weight="800">H⁺ libres</text><text x="375" y="162" text-anchor="middle" class="lbl">(origen indistinguible)</text>
+                <rect class="box" x="530" y="20" width="220" height="62" rx="12"/><text x="640" y="46" text-anchor="middle" font-weight="700">Pulmón</text><text x="640" y="66" text-anchor="middle" class="lbl">CO₂ espirado ≈ 20 000</text>
+                <rect class="box" x="530" y="119" width="220" height="62" rx="12"/><text x="640" y="145" text-anchor="middle" font-weight="700">Metabolismo (O₂)</text><text x="640" y="165" text-anchor="middle" class="lbl">Y⁻ → HCO₃⁻ ≈ 2000</text>
+                <rect class="box" x="530" y="218" width="220" height="62" rx="12"/><text x="640" y="244" text-anchor="middle" font-weight="700">Riñón (NH₄⁺ + acidez tit.)</text><text x="640" y="264" text-anchor="middle" class="lbl">≈ 70 mmol/día ≈ 1 mmol/kg/día</text>
+                <path class="arrow hl flow" d="M230,51 C270,51 270,120 298,130" marker-end="url(#ah4)" stroke-width="6"/>
+                <path class="arrow hl flow" d="M230,150 L298,150" marker-end="url(#ah4)" stroke-width="3.5"/>
+                <path class="arrow hl flow" d="M230,249 C270,249 270,180 298,170" marker-end="url(#ah4)" stroke-width="1.8"/>
+                <path class="arrow hl flow" d="M450,130 C490,120 490,51 528,51" marker-end="url(#ah4)" stroke-width="6"/>
+                <path class="arrow hl flow" d="M450,150 L528,150" marker-end="url(#ah4)" stroke-width="3.5"/>
+                <path class="arrow hl flow" d="M450,170 C490,180 490,249 528,249" marker-end="url(#ah4)" stroke-width="1.8"/>
+              </svg>
+            </div>
+          </div>
+
+          <ul>
+            <li><strong>Pulmón:</strong> debe eliminar tantos H⁺ como aporta la disociación del CO₂d. Cualquier tendencia a subir la P<sub>CO₂</sub> estimula los centros respiratorios (hiperventilación).</li>
+            <li><strong>Metabolismo:</strong> consume los H⁺ de los ácidos orgánicos metabolizables.</li>
+            <li><strong>Riñón:</strong> elimina el resto ajustando el NH₄⁺ urinario: ≈ 70 mmol/día (≈ 1 mmol/kg/día) = 35 minerales + 35 orgánicos no metabolizables.</li>
+          </ul>
+          <div class="callout key"><div class="ttl">💡 Regulación con dos efectores</div>
+            <p>La variable regulada es el <strong>pH</strong>. Hay dos efectores: el pulmón (controla la P<sub>CO₂</sub> y, con ella, el ácido volátil) y el riñón (controla la eliminación de ácidos fijos). Como el organismo no distingue de dónde viene cada H⁺, la estabilidad exige que el pulmón elimine exactamente la carga volátil y el riñón exactamente la fija.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 3.8 -->
+        <section class="sub" id="s3-8">
+          <h2><span class="sub-num">3.8</span> Trastornos ácido-base: vocabulario preciso</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Definir los trastornos metabólicos y respiratorios, puros, compensados, mixtos, simples y complejos.</li>
+            <li>No confundir acidemia con acidosis.</li>
+          </ul></div>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Parámetro normal (sangre arterial)</th><th class="num">Valor</th></tr></thead>
+              <tbody>
+                <tr><td>pH</td><td class="num">7.40 ± 0.02</td></tr>
+                <tr><td>P<sub>CO₂</sub></td><td class="num">39 ± 3 mmHg (CO₂d 1.2 ± 0.1 mmol/L)</td></tr>
+                <tr><td>[HCO₃⁻]</td><td class="num">24 ± 3 mmol/L</td></tr>
+                <tr><td>CO₂ total = [HCO₃⁻] + [CO₂d] (lo que suele medir el laboratorio)</td><td class="num">25 ± 3 mmol/L</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid-2">
+            <div class="mini"><h4>Metabólico</h4><p>Anomalía de la concentración de <strong>ácidos fijos</strong>. Por exceso, <strong>acidosis metabólica</strong>; por defecto, <strong>alcalosis metabólica</strong>. No se mide su concentración, solo su variación.</p></div>
+            <div class="mini"><h4>Respiratorio</h4><p>Anomalía del <strong>ácido volátil</strong> (P<sub>CO₂</sub>). <strong>Acidosis respiratoria</strong> = hipercapnia (P<sub>CO₂</sub> &gt; 42 mmHg). <strong>Alcalosis respiratoria</strong> = hipocapnia (&lt; 36 mmHg).</p></div>
+          </div>
+          <ul>
+            <li><strong>Agudo / crónico:</strong> aparición brusca y a menudo reversible frente a instauración lenta.</li>
+            <li><strong>Puro:</strong> solo afecta a una de las dos clases de ácidos.</li>
+            <li><strong>Compensado:</strong> una clase cambia en sentido opuesto a la otra y atenúa el cambio de pH. <strong>Totalmente compensado</strong> si el pH queda entre 7.38 y 7.42.</li>
+            <li><strong>Mixto:</strong> ambas clases cambian en el mismo sentido (acidosis mixta o alcalosis mixta).</li>
+            <li><strong>Simple:</strong> se debe a una sola patología. <strong>Complejo:</strong> varias.</li>
+            <li><strong>Acidemia</strong> = pH &lt; 7.38; <strong>alcalemia</strong> = pH &gt; 7.42. <strong>Acidosis/alcalosis</strong> designan el <em>proceso</em>. Una alcalosis respiratoria puede coexistir con acidemia si domina una acidosis metabólica.</li>
+          </ul>
+
+          <div class="table-wrap">
+            <table class="data">
+              <thead><tr><th>Trastorno</th><th></th><th class="num">pH</th><th class="num">HCO₃⁻</th><th class="num">P<sub>CO₂</sub></th></tr></thead>
+              <tbody>
+                <tr><td rowspan="2">Acidosis metabólica</td><td>Pura</td><td class="num">↓</td><td class="num">↓</td><td class="num">=</td></tr>
+                <tr><td>Compensada</td><td class="num">=</td><td class="num">↓↓</td><td class="num">↓</td></tr>
+                <tr><td rowspan="2">Alcalosis metabólica</td><td>Pura</td><td class="num">↑</td><td class="num">↑</td><td class="num">=</td></tr>
+                <tr><td>Compensada</td><td class="num">=</td><td class="num">↑↑</td><td class="num">↑</td></tr>
+                <tr><td rowspan="2">Acidosis respiratoria</td><td>Pura</td><td class="num">↓</td><td class="num">↑</td><td class="num">↑</td></tr>
+                <tr><td>Compensada</td><td class="num">=</td><td class="num">↑↑</td><td class="num">↑</td></tr>
+                <tr><td rowspan="2">Alcalosis respiratoria</td><td>Pura</td><td class="num">↑</td><td class="num">↓</td><td class="num">↓</td></tr>
+                <tr><td>Compensada</td><td class="num">=</td><td class="num">↓↓</td><td class="num">↓</td></tr>
+                <tr><td rowspan="2">Mixtos</td><td>Acidosis mixta</td><td class="num">↓↓</td><td class="num">=</td><td class="num">↑</td></tr>
+                <tr><td>Alcalosis mixta</td><td class="num">↑↑</td><td class="num">=</td><td class="num">↓</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout warn"><div class="ttl">⚠️ Detalle que se pregunta</div>
+            <p>En la acidosis respiratoria <em>pura</em> el HCO₃⁻ <strong>sube</strong> (sin intervención renal). El CO₂ se disocia en HCO₃⁻ + H⁺ y los tampones cerrados captan el H⁺, lo que desplaza aún más el equilibrio. La compensación siempre <strong>agrava</strong> la desviación del bicarbonato: lo peligroso es el pH, no el HCO₃⁻.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 3.9 -->
+        <section class="sub" id="s3-9">
+          <h2><span class="sub-num">3.9</span> El diagrama de Davenport</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Construir isóbaras y rectas de equilibrio del CO₂.</li>
+            <li>Ubicar a un paciente, reconocer su trastorno y medir su exceso de ácidos fijos.</li>
+          </ul></div>
+
+          <p>Representa [HCO₃⁻] (ordenadas) frente al pH (abscisas). Con dos de los tres parámetros, Henderson-Hasselbalch da el tercero, así que cada punto tiene una P<sub>CO₂</sub>. El estado normal se reduce didácticamente al punto <strong>N</strong> (pH 7.40; HCO₃⁻ 24 mmol/L; P<sub>CO₂</sub> 40 mmHg).</p>
+
+          <div class="grid-2">
+            <div class="mini">
+              <h4>Isóbaras: ácido volátil constante</h4>
+              <p>Si solo cambian los ácidos fijos (trastorno <strong>metabólico puro</strong>), la P<sub>CO₂</sub> es constante y el punto recorre una exponencial:</p>
+              <p>$$[\text{HCO}_3^-] = a\,P_{CO_2}\,10^{\,\text{pH}-6.1}$$</p>
+              <p class="small">Por encima de la isóbara normal: acidosis respiratoria. Por debajo: alcalosis respiratoria.</p>
+            </div>
+            <div class="mini">
+              <h4>Rectas de equilibrio: ácidos fijos constantes</h4>
+              <p>Si solo cambia el CO₂ (trastorno <strong>respiratorio puro</strong>), el punto recorre la curva de titulación de los tampones cerrados, que es una recta en la zona compatible con la vida. Su pendiente es −s, el poder tampón de los cerrados:</p>
+              <p>$$[\text{HCO}_3^-] = 24 - s\,(\text{pH}-7.40)$$</p>
+              <p class="small">La recta que pasa por N es la <strong>recta normal de equilibrio (RNE)</strong>. Por debajo: acidosis metabólica. Por encima: alcalosis metabólica. Si baja la Hb (anemia), s disminuye y las rectas se aplanan.</p>
+            </div>
+          </div>
+
+          <div class="widget" id="w-dav">
+            <div class="widget-head"><span class="badge">Simulador</span><h3>Diagrama de Davenport interactivo</h3></div>
+            <div class="widget-body">
+              <p class="hint">Mueve la P<sub>CO₂</sub> (componente respiratorio) y el exceso de ácidos fijos (componente metabólico), o <b>haz clic en el diagrama</b> para situar un punto. Los presets animan la trayectoria: agresión primaria → compensación.</p>
+              <div class="btn-row" id="dav-presets">
+                <button type="button" class="btn sm" data-d="normal">Normal</button>
+                <button type="button" class="btn sm" data-d="ra_a">Acidosis resp. aguda</button>
+                <button type="button" class="btn sm" data-d="ra_c">Acidosis resp. crónica</button>
+                <button type="button" class="btn sm" data-d="rk_a">Alcalosis resp. aguda</button>
+                <button type="button" class="btn sm" data-d="rk_c">Alcalosis resp. crónica</button>
+                <button type="button" class="btn sm" data-d="ma_p">Acidosis metab. pura</button>
+                <button type="button" class="btn sm" data-d="ma_c">Acidosis metab. compensada</button>
+                <button type="button" class="btn sm" data-d="mk">Alcalosis metabólica</button>
+                <button type="button" class="btn sm" data-d="mix_a">Acidosis mixta (paro)</button>
+                <button type="button" class="btn sm" data-d="mix_k">Alcalosis mixta</button>
+              </div>
+              <div class="controls">
+                <div class="ctrl"><label for="d-p">P<sub>CO₂</sub> (mmHg) <output for="d-p"></output></label><input type="range" id="d-p" min="15" max="110" step="0.5" value="40"></div>
+                <div class="ctrl"><label for="d-e">Exceso de ácidos fijos (mmol/L) <output for="d-e"></output></label><input type="range" id="d-e" min="-20" max="25" step="0.5" value="0"></div>
+                <div class="ctrl"><label for="d-s">Poder tampón cerrados s <output for="d-s"></output></label><input type="range" id="d-s" min="5" max="35" step="1" value="22"></div>
+              </div>
+              <div class="viz"><canvas id="dav-canvas" aria-label="Diagrama de Davenport"></canvas><div class="tooltip" id="dav-tip"></div></div>
+              <div class="legend"><span><i style="background:var(--s1)"></i>Isóbaras (P<sub>CO₂</sub>)</span><span><i style="background:var(--s3)"></i>Recta normal de equilibrio (RNE)</span><span><i style="background:var(--accent)"></i>Recta de equilibrio del paciente</span></div>
+              <div class="readout" id="dav-out"></div>
+              <div class="verdict" id="dav-verdict"></div>
+              <h4 style="margin-top:18px">Ubicar una gasometría</h4>
+              <div class="controls">
+                <div class="ctrl"><label for="g-ph">pH</label><input type="number" id="g-ph" step="0.01" value="7.31"></div>
+                <div class="ctrl"><label for="g-p">P<sub>CO₂</sub> (mmHg)</label><input type="number" id="g-p" step="0.5" value="31"></div>
+                <div class="ctrl" style="align-self:end"><button type="button" class="btn primary" id="g-go">Situar en el diagrama</button></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout key"><div class="ttl">💡 Leer el exceso de ácidos fijos</div>
+            <p>Las rectas de equilibrio son paralelas. El exceso (o déficit) de ácidos fijos del paciente es la <strong>distancia vertical</strong> entre su recta y la RNE. Equivale a llevar el punto P, por su propia recta, al punto M de pH 7.40, donde los tampones cerrados se han regenerado: la caída de bicarbonato MN mide entonces todo el exceso. El <strong>exceso de bases</strong> es BE = −(exceso de ácidos fijos).</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 3.10 -->
+        <section class="sub" id="s3-10">
+          <h2><span class="sub-num">3.10</span> Trastornos respiratorios y metabólicos: causas y compensación</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Enumerar las causas de cada trastorno.</li>
+            <li>Describir la compensación renal (lenta) y la respiratoria (rápida) sobre el Davenport.</li>
+            <li>Calcular la dosis de bicarbonato y explicar por qué crece su volumen de distribución.</li>
+          </ul></div>
+
+          <h3>Trastornos respiratorios</h3>
+          <p>En condiciones normales la ventilación se ajusta para que la P<sub>CO₂</sub> no cambie aunque varíe la producción de CO₂. Un trastorno respiratorio es, por tanto, un fallo del ajuste de la ventilación.</p>
+          <div class="grid-2">
+            <div class="mini"><h4>Acidosis respiratoria: hipoventilación</h4>
+              <p><strong>Aguda:</strong> obstructiva (cuerpo extraño como un cacahuete, asma), neurológica central (morfina, parada cardiorrespiratoria) o periférica (sección medular cervical, poliomielitis).</p>
+              <p><strong>Crónica:</strong> obstructiva (bronquitis crónica), restrictiva (fibrosis pulmonar), neurológica (poliomielitis).</p></div>
+            <div class="mini"><h4>Alcalosis respiratoria: hiperventilación</h4>
+              <p><strong>Primaria</strong> (a menudo aguda): psicógena (emociones), orgánica (encefalopatías), iatrogénica (ventilación asistida).</p>
+              <p><strong>Secundaria a hipoxia crónica:</strong> hipoxemia (altitud, fibrosis) o hipoxia tisular (anemia, bajo gasto). La hipoxia <em>aguda</em> (obstrucción traqueal, parada) va con hipoventilación.</p></div>
+          </div>
+          <ul>
+            <li><strong>Aguda:</strong> la compensación renal tarda <strong>12–48 h</strong> en actuar (y en desaparecer). El trastorno es puro y el punto recorre la <strong>RNE</strong>.</li>
+            <li><strong>Crónica:</strong> en días, el riñón baja los ácidos fijos y sube el HCO₃⁻. Como no puede cambiar la P<sub>CO₂</sub>, el punto sube por su <strong>isóbara</strong> hacia pH normal. Si no es grave, la compensación puede ser completa.</li>
+            <li><strong>Compensar ≠ curar.</strong> La compensación lleva el punto a la zona de pH normal; solo la curación lo devuelve a N, normalizando ambos tipos de ácido.</li>
+          </ul>
+
+          <h3>Trastornos metabólicos</h3>
+          <div class="grid-2">
+            <div class="mini"><h4>Acidosis por ácidos orgánicos (hipoxia)</h4><p>Se acumulan muy rápido y amenazan la vida: reanimación. El tratamiento es corregir la hipoxia, porque solo el metabolismo de los aniones orgánicos regenera el bicarbonato necesario.</p></div>
+            <div class="mini"><h4>Acidosis por ácidos minerales (menos grave)</h4>
+              <p><strong>Sobrecarga que supera la excreción renal:</strong> exógena (aspirina, sobre todo en lactantes; anticongelante), endógena (cetoacidosis diabética por falta de insulina; acidosis láctica) o pérdida digestiva de bases (diarrea aguda).</p>
+              <p><strong>Fallo de la eliminación renal:</strong> insuficiencia renal, acidosis tubulares.</p></div>
+          </div>
+          <ul>
+            <li>La agresión metabólica pura desplaza el punto por la <strong>isóbara de 40 mmHg</strong>. El exceso de ácidos fijos = caída de HCO₃⁻ + caída de A⁻, así que es <strong>≥ la caída de bicarbonato</strong>.</li>
+            <li>La <strong>compensación respiratoria es inmediata</strong>: la acidemia estimula los centros respiratorios y el paciente hiperventila (respiración rápida y profunda). El punto baja por su <strong>recta de equilibrio</strong>, porque el pulmón no cambia los ácidos fijos.</li>
+          </ul>
+          <div class="callout clinic"><div class="ttl">🩺 Regla práctica de compensación</div>
+            <p>En una acidosis metabólica <strong>simple</strong>, la P<sub>CO₂</sub> (mmHg) ≈ las dos primeras cifras decimales del pH. pH 7.30 → P<sub>CO₂</sub> ≈ 30 mmHg; pH 7.25 → ≈ 25. Si la P<sub>CO₂</sub> es mayor, hay además un problema respiratorio: el trastorno es complejo.</p>
+          </div>
+          <p>La alcalosis metabólica se compensa con hipoventilación, pero solo moderadamente, para no provocar <strong>hipoxemia</strong> (P<sub>O₂</sub> baja). Por eso el organismo <strong>tolera peor una alcalosis que una acidosis metabólica</strong> y las alcalosis metabólicas suelen estar descompensadas.</p>
+
+          <h3>Corregir con bicarbonato</h3>
+          <p>La cantidad de base que hay que administrar es igual al exceso de ácidos fijos. Se usa bicarbonato sódico, cuyo CO₂ se elimina por el pulmón. Ese bicarbonato sirve para dos cosas: normalizar el propio HCO₃⁻ y regenerar los tampones cerrados, que habían captado H⁺. Por eso el <strong>volumen de distribución aparente del bicarbonato aumenta con la gravedad de la acidemia</strong>.</p>
+          <div class="example">
+            <div class="ex-head">✏️ Ejemplo: dosis de bicarbonato</div>
+            <div class="ex-body">
+              <p>75 kg, HCO₃⁻ 15 mmol/L, volumen extracelular 18 L, pendiente in vivo 20 mmol·L⁻¹·pH⁻¹.</p>
+              <ol class="steps">
+                <li><strong>pH 7.40:</strong> acidosis metabólica totalmente compensada (P<sub>CO₂</sub> = 15/(0.03 × 20) = 25 mmHg). Exceso = 24 − 15 = 9 mmol/L → 9 × 18 = <strong>162 mmol</strong>; V<sub>D</sub> aparente = 162/9 = 18 L.</li>
+                <li><strong>pH 7.20:</strong> RNE a 7.20 = 24 + 20 × 0.2 = 28 → exceso = 28 − 15 = 13 mmol/L → 13 × 18 = <strong>234 mmol</strong>; V<sub>D</sub> aparente = 234/(24 − 15) = <strong>26 L</strong>. Hay que regenerar además los tampones cerrados.</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================ 3.11 -->
+        <section class="sub" id="s3-11">
+          <h2><span class="sub-num">3.11</span> Vigilancia: la gasometría arterial</h2>
+          <div class="objectives"><b>Al terminar podrás</b><ul>
+            <li>Describir los tres métodos de medida.</li>
+            <li>Reconocer los límites del diagrama de Davenport.</li>
+          </ul></div>
+          <p>Hacen falta dos de los tres parámetros (pH, HCO₃⁻, P<sub>CO₂</sub>); el tercero se calcula. La sangre debe ser <strong>arterial</strong> y manipularse <strong>en anaerobiosis</strong>, para que no escape el CO₂. El pH siempre se mide con electrodo de vidrio, con corrección de temperatura.</p>
+          <div class="grid-3">
+            <div class="mini"><h4>Clásico</h4><p>pH + CO₂ total:</p><p>$$[\text{CO}_{2d}] = \frac{[\text{CO}_2]_{total}}{1+10^{\,\text{pH}-6.1}}$$</p><p class="small">P<sub>CO₂</sub> = [CO₂d]/0.03.</p></div>
+            <div class="mini"><h4>Electrodos</h4><p>pH + P<sub>CO₂</sub> con electrodos selectivos; el HCO₃⁻ se calcula con Henderson-Hasselbalch. Es el método más usado.</p></div>
+            <div class="mini"><h4>Astrup</h4><p>Una sola muestra y tres medidas de pH: a su P<sub>CO₂</sub> real y a dos P<sub>CO₂</sub> impuestas. Así se obtiene la <strong>recta de equilibrio in vitro</strong> del paciente, su HCO₃⁻, su P<sub>CO₂</sub> y el exceso de ácidos fijos.</p></div>
+          </div>
+          <div class="callout warn"><div class="ttl">⚠️ Límite intrínseco del Davenport</div>
+            <p>Para calcular el exceso de ácidos fijos hace falta la pendiente de la recta de equilibrio. Se mide <em>in vitro</em> (≈ 30), pero la real <em>in vivo</em> es mucho menor (≈ 22 o menos). Por eso el valor tiene poca validez cuantitativa, aunque sirve para tomar decisiones. Si el punto cae fuera de las zonas de los trastornos simples, el trastorno es <strong>complejo</strong>: por ejemplo, una acidosis mixta en una parada cardiorrespiratoria.</p>
+          </div>
+        </section>
+
+        <!-- ============================================================ 3.12 -->
+        <section class="sub" id="s3-12">
+          <h2><span class="sub-num">3.12</span> Casos resueltos</h2>
+
+          <details class="case">
+            <summary>Caso 3-A · pH 7.31 y HCO₃⁻ 15 mmol/L</summary>
+            <div class="case-body">
+              <ol>
+                <li><strong>Sin calcular:</strong> pH bajo y HCO₃⁻ bajo. Una acidosis respiratoria subiría el HCO₃⁻, así que es una <strong>acidosis metabólica</strong>.</li>
+                <li>P<sub>CO₂</sub> = 15/(0.03 × 10<sup>1.21</sup>) ≈ <strong>31 mmHg</strong> &lt; 40 → hay hiperventilación compensadora, pero el pH sigue bajo: <strong>parcialmente compensada</strong>.</li>
+                <li>La regla da P<sub>CO₂</sub> esperada ≈ 31 → coincide → <strong>acidosis metabólica simple</strong>. Compruébalo con «Ubicar una gasometría» en el Davenport.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 3-B · Sangre venosa frente a arterial</summary>
+            <div class="case-body">
+              <p>La sangre venosa tiene ΔpH = −0.05 y ΔP<sub>CO₂</sub> = +5 mmHg respecto a la arterial (7.40 y 40).</p>
+              <ol>
+                <li>La venosa solo ha recibido más ácido volátil: está en la <strong>misma recta de equilibrio</strong>, así que su concentración de ácidos fijos es <strong>igual</strong>.</li>
+                <li>Al subir por la recta hacia pH menor, el HCO₃⁻ venoso es <strong>ligeramente superior</strong> al arterial (el CO₂ añadido genera HCO₃⁻ y los tampones cerrados captan los H⁺).</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 3-C · Tampones abiertos y cerrados: 9 mmol de HCl en 1 L</summary>
+            <div class="case-body">
+              <table class="data">
+                <thead><tr><th>Solución</th><th class="num">pH final</th><th class="num">Poder tampón (mEq/L/pH)</th></tr></thead>
+                <tbody>
+                  <tr><td>A · NaOH a pH 7.4 (sin tampón)</td><td class="num">≈ 2.05</td><td class="num">≈ 1.7</td></tr>
+                  <tr><td>B · bicarbonato cerrado (24/1.2)</td><td class="num">6.27</td><td class="num">≈ 8</td></tr>
+                  <tr><td>C · A⁻/AH cerrado (48/12, pK 6.8)</td><td class="num">7.07</td><td class="num">≈ 27</td></tr>
+                  <tr><td>D · bicarbonato abierto (P<sub>CO₂</sub> 40)</td><td class="num">7.20</td><td class="num">≈ 44</td></tr>
+                  <tr><td>E · C + D</td><td class="num">7.28</td><td class="num">≈ 73</td></tr>
+                </tbody>
+              </table>
+              <ul>
+                <li><strong>B &gt; A:</strong> el tampón capta casi todos los H⁺.</li>
+                <li><strong>C &gt; B:</strong> su pK (6.8) está mucho más cerca del pH, y el tampón es más eficaz cerca de su pK.</li>
+                <li><strong>D &gt; B:</strong> el CO₂ formado se elimina y no se acumula. Si se baja la P<sub>CO₂</sub> a <strong>25 mmHg</strong> (CO₂d 0.75), el pH vuelve a 7.40. La recta de equilibrio de D es <strong>horizontal</strong> (no tiene tampones cerrados).</li>
+                <li><strong>E:</strong> es el caso del organismo; ambos tampones suman. Con P<sub>CO₂</sub> 25 mmHg el pH vuelve a 7.40 y la pendiente de su recta de equilibrio (≈ 24) es cercana al poder tampón de C.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 3-D · Método de Astrup y el límite in vitro / in vivo</summary>
+            <div class="case-body">
+              <p>Muestra arterial: pH 7.30. Equilibrada a P<sub>CO₂</sub> 71 mmHg → pH 7.22; a 32 mmHg → pH 7.46.</p>
+              <ol>
+                <li>HCO₃⁻ en los dos puntos: 0.03 × 71 × 10<sup>1.12</sup> ≈ 28.1 y 0.03 × 32 × 10<sup>1.36</sup> ≈ 22.0 mmol/L → pendiente in vitro ≈ <strong>−25.4</strong>.</li>
+                <li>Al pH del paciente (7.30): HCO₃⁻ ≈ 26.0 → P<sub>CO₂</sub> ≈ <strong>55 mmHg</strong>. La RNE (s = 25.4) a pH 7.30 da 26.5 → exceso ≈ 0.5 ≈ 0 → <strong>acidosis respiratoria aguda pura</strong>.</li>
+                <li>Tras la ventilación asistida: P<sub>CO₂</sub> 30.5, pH 7.50 → HCO₃⁻ ≈ 23.0. Con la pendiente in vitro parecería una leve alcalosis metabólica (1.5 mmol/L por encima de la RNE). En realidad, los dos puntos del paciente definen una pendiente <strong>in vivo ≈ −15</strong>: los ácidos fijos no han cambiado. El trastorno era una acidosis respiratoria aguda pura. Es el límite in vitro / in vivo del Davenport.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 3-E · Lactante con diarrea: hidratación y ácido-base juntos</summary>
+            <div class="case-body">
+              <p>2 meses, peso previo 4 kg, ahora 3.4 kg; natremia 130; coma, taquicardia, hipotensión; solo tomaba agua azucarada. Agua = 70 % del peso. Gasometría arterial: pH 7.25; CO₂ total 15 mmol/L; pendiente −20.</p>
+              <ol>
+                <li><strong>Hidratación:</strong> shock y pérdida de peso → deshidratación extracelular (déficit de Na). Hiponatremia → hiperhidratación celular (agua azucarada = agua). Es la "hiponatremia por déficit".</li>
+                <li><strong>Déficits:</strong> agua 2.8 → 2.2 L (faltan 0.6 L). Na: Δm = 130 × 2.2 − 140 × 2.8 = <strong>−106 mmol</strong>.</li>
+                <li>Si se empieza por el <strong>agua</strong>, empeoran la hiponatremia y la hiperhidratación celular y apenas mejora el extracelular. Si se empieza por el <strong>sodio</strong>, se corrigen la natremia y la hidratación celular y el extracelular mejora, porque sale agua de las células.</li>
+                <li><strong>Ácido-base:</strong> CO₂d = 15/(1 + 10<sup>1.15</sup>) ≈ 0.99 → P<sub>CO₂</sub> ≈ 33 mmHg; HCO₃⁻ ≈ 14. Es una acidosis metabólica, pero la P<sub>CO₂</sub> esperada es ≈ 25: <strong>compensación insuficiente</strong> (trastorno complejo; el coma deprime la ventilación).</li>
+                <li><strong>Exceso de ácidos fijos:</strong> RNE a 7.25 = 24 + 20 × 0.15 = 27 → 27 − 14 = <strong>13 mmol/L</strong>.</li>
+                <li><strong>Perfusión:</strong> bicarbonato 13 × 2 L = 26 mmol; a 14 g/L (166.7 mmol/L) → <strong>≈ 156 mL</strong>. Na restante: 106 − 26 = 80 mmol → NaCl 0.15 M → <strong>≈ 533 mL</strong>. Ambas soluciones, casi isotónicas, ya aportan ≈ 0.69 L de agua, más que los 0.6 L que faltan: <strong>no hace falta glucosado adicional</strong>. El pequeño exceso lo ajusta el riñón.</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="case">
+            <summary>Caso 3-F · Disociación del láctico y del fosfórico</summary>
+            <div class="case-body">
+              <ol>
+                <li><strong>Ácido láctico</strong> (pK 4.8) a 2 mmol/L: en agua pura, α ≈ <strong>8.5 %</strong> (resolviendo α²C/(1−α) = K<sub>A</sub>). En el organismo, a pH 7.4 tamponado: α = 1/(1 + 10<sup>−2.6</sup>) ≈ <strong>99.7 %</strong>. Se comporta como un ácido fuerte.</li>
+                <li><strong>Ácido fosfórico</strong> (pK 2.1, 6.8 y 12.4) a pH 7.4: la 1.ª disociación es total, la 2.ª es del 80 % (1/(1 + 10<sup>−0.6</sup>)) y la 3.ª casi nula → <strong>≈ 1.8 mEq de H⁺ por mmol</strong> de caseína.</li>
+                <li><strong>Fosfatemia</strong> 1.2 mmol/L → 1.2 × (0.2 × 1 + 0.8 × 2) ≈ <strong>2.2 mEq/L</strong> (≈ 4/5 divalente).</li>
+              </ol>
+            </div>
+          </details>
+        </section>
+
+        <!-- ============================================================ QUIZ -->
+        <section class="sub" id="evaluacion">
+          <h2><span class="sub-num">✓</span> Evaluación del módulo 3</h2>
+          <p>30 preguntas de nivel universitario con una sola respuesta correcta. Al calificar verás la explicación de cada una y los temas que debes repasar.</p>
+          <div class="quiz-root"></div>
+          <div class="pager">
+            <a class="btn" href="modulo-2.html">← Módulo 2</a>
+            <a class="btn primary" href="index.html">Volver al inicio</a>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>
