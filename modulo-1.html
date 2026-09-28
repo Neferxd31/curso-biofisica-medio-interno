@@ -53,7 +53,7 @@
           <p class="lead">El agua es el constituyente más abundante del cuerpo, pero no está repartida al azar: la membrana celular y la pared capilar la dividen en compartimientos de composición muy distinta. Aquí aprenderás a describir una disolución con precisión y a medir esos compartimientos sin vaciarlos.</p>
           <div class="stats">
             <span class="chip">7 submódulos + casos</span>
-            <span class="chip">4 simuladores</span>
+            <span class="chip">6 simuladores y gráficas</span>
             <span class="chip">Evaluación de 30 preguntas</span>
           </div>
         </div>
@@ -205,7 +205,7 @@
           <h3>Fracción molar: la medida más "teórica"</h3>
           <p>Es la proporción de moles de un constituyente sobre los moles totales. No distingue solvente de solutos y aparece directamente en las ecuaciones de la teoría de disoluciones:</p>
           <div class="formula">$$f_i = \frac{n_i}{n_{H_2O} + n_{Osm}} \qquad f_{H_2O} = \frac{n_{H_2O}}{n_{H_2O}+n_{Osm}} \qquad f_{H_2O} + f_s = 1$$</div>
-          <p>En la práctica es incómoda: nadie prepara un jarabe con "fracción molar de azúcar 0.01". En el laboratorio se trabaja con la <strong>concentración ponderal</strong> \(C_i = m_i/V\). Los porcentajes clásicos son ponderales: glucosa al 5 % ≈ 50 g/L; hemoglobina 14 g/dL ≈ 140 g/L.</p>
+          <p>En la práctica es incómoda: nadie prepara un jarabe con "fracción molar de azúcar 0.01". En el laboratorio se trabaja con la <strong>concentración ponderal</strong> \(C_i = m_i/V\). Los porcentajes clásicos son ponderales (gramos de soluto por 100 g de disolución): glucosa al 5 % ≈ 50 g/L. Una hemoglobina "al 14 %" significa ≈ 14 g por dL de sangre, es decir ≈ 140 g/L (100 mL de sangre no pesan exactamente 100 g).</p>
 
           <h3>Molal y molar: ¿por litro de agua o por litro de disolución?</h3>
           <div class="grid-2">
@@ -346,7 +346,7 @@
                 <tr><td><strong>Extracelular</strong></td><td class="num">40 %</td><td class="num">≈ 17 L</td><td>—</td></tr>
                 <tr><td>&nbsp;&nbsp;↳ Intersticial (extravascular)</td><td class="num">28 %</td><td class="num">≈ 12 L</td><td>Endotelio capilar</td></tr>
                 <tr><td>&nbsp;&nbsp;↳ Plasmático (intravascular)</td><td class="num">12 %</td><td class="num">≈ 5 L</td><td>Endotelio capilar</td></tr>
-                <tr><td>Transcelular</td><td class="num">≈ 2 %</td><td class="num">&lt; 1 L</td><td>Epitelios</td></tr>
+                <tr><td>Transcelular (aparte de este reparto)</td><td class="num">≈ 2 %</td><td class="num">&lt; 1 L</td><td>Epitelios</td></tr>
               </tbody>
             </table>
           </div>
@@ -488,7 +488,7 @@
             <table class="data">
               <thead><tr><th>Se quiere medir</th><th>Trazadores endógenos marcados*</th><th>Trazadores exógenos</th></tr></thead>
               <tbody>
-                <tr><td><strong>Agua total</strong></td><td>Agua pesada / tritiada*, urea*</td><td>Antipirina</td></tr>
+                <tr><td><strong>Agua total</strong></td><td>Agua pesada (D₂O, isótopo estable), agua tritiada*, urea*</td><td>Antipirina</td></tr>
                 <tr><td><strong>Volumen extracelular</strong></td><td>Sulfato (³⁵S)*</td><td>Manitol</td></tr>
                 <tr><td><strong>Volumen plasmático</strong></td><td>Albúmina marcada*</td><td>Azul de Evans (se une a la albúmina)</td></tr>
               </tbody>
@@ -582,7 +582,7 @@
           <h3>Concentración intracelular media</h3>
           <div class="formula">$$c_i = c\,\frac{V_D - V_e}{V_i}$$</div>
           <div class="callout warn"><div class="ttl">⚠️ Sensibilidad del cálculo</div>
-            <p>Para el sodio, \(V_D\) es muy cercano a \(V_e\), así que la resta \(V_D - V_e\) es pequeña y cualquier error en \(V_e\) altera mucho \(c_i\). Por eso hay que distinguir con cuidado el volumen extracelular (medido con sulfato) del volumen de distribución del sodio. En el caso 1-B verás que usar la inulina casi duplica el error.</p>
+            <p>Para el sodio, \(V_D\) es muy cercano a \(V_e\), así que la resta \(V_D - V_e\) es pequeña y cualquier error en \(V_e\) altera mucho \(c_i\). Por eso hay que distinguir con cuidado el volumen extracelular (medido con sulfato) del volumen de distribución del sodio. En el caso 1-C verás que tomar como V<sub>e</sub> el volumen de la inulina sube la concentración celular calculada de ≈ 27 a ≈ 39 mmol/L.</p>
           </div>
         </section>
 

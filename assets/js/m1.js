@@ -141,12 +141,18 @@
     setupCanvas(canvas, 0.42, draw, 240);
     visibleLoop(canvas, step);
 
-    const labels = { solid: ['Sólido', 'Sí', 'No'], liquid: ['Líquido', 'Sí', 'Sí'], gas: ['Gas', 'No', 'Sí'] };
+    const labels = {
+      solid: ['Sólido', 'Sí', 'No', '≪ 1'],
+      liquid: ['Líquido', 'Sí', 'Sí', '≈ 1 (mismo orden)'],
+      gas: ['Gas', 'No', 'Sí', '≫ 1']
+    };
     bindRange(document.getElementById('temp'), v => {
       T = v;
       const l = labels[phase()];
+      // Log scale so the liquid band (30–65) spans one order of magnitude around Ec/EI = 1.
+      const ratio = Math.pow(10, (T - 47.5) / 30);
       document.getElementById('st-state').textContent = l[0];
-      document.getElementById('st-ratio').textContent = fmt(T / 40, 2);
+      document.getElementById('st-ratio').innerHTML = `${fmt(ratio, ratio < 1 ? 2 : 1)} <span class="u">${l[3]}</span>`;
       document.getElementById('st-coh').textContent = l[1];
       document.getElementById('st-flu').textContent = l[2];
     });
@@ -157,11 +163,11 @@
     const root = document.getElementById('w-conc');
     if (!root) return;
     const SOLUTES = {
-      nacl: { name: 'NaCl', M: 58.5, i: 2, eq: 1 },
+      nacl: { name: 'NaCl', M: 58.5, i: 2, eq: 1, eqUnit: 'mEq/L de cationes (= de aniones)' },
       glucosa: { name: 'glucosa', M: 180, i: 1, eq: 0 },
       urea: { name: 'urea', M: 60, i: 1, eq: 0 },
-      cacl2: { name: 'CaCl₂', M: 111, i: 3, eq: 2 },
-      albumina: { name: 'albúmina', M: 70000, i: 1, eq: 16 }
+      cacl2: { name: 'CaCl₂', M: 111, i: 3, eq: 2, eqUnit: 'mEq/L de cationes (= de aniones)' },
+      albumina: { name: 'albúmina', M: 70000, i: 1, eq: 16, eqUnit: 'mEq/L de carga negativa (≈ 16 por molécula)' }
     };
     const sel = document.getElementById('c-solute');
     const mass = document.getElementById('c-mass');
@@ -184,12 +190,19 @@
         stat('Molal', fmt(molal, molal < 1 ? 3 : 1), 'mmol/kg agua') +
         stat('Osmolar', fmt(osmolar, osmolar < 1 ? 3 : 1), 'mOsm/L') +
         stat('Osmolal', fmt(osmolal, osmolal < 1 ? 3 : 1), 'mOsm/kg') +
-        stat('Equivalente', s.eq ? fmt(meq, 1) : '0', s.eq ? 'mEq/L (de cada signo)' : 'sin carga') +
+        stat('Equivalente', s.eq ? fmt(meq, 1) : '0', s.eq ? s.eqUnit : 'sin carga') +
         stat('f<sub>H₂O</sub>', fmt(fWater, 5), '');
       let msg;
-      if (osmolal >= 280 && osmolal <= 320) msg = `<b>≈ isoosmolal con el plasma</b> (≈ 300 mOsm/kg). Con 9 g/L de NaCl obtienes el «suero fisiológico».`;
-      else if (osmolal < 280) msg = `<b>Hipoosmolal</b> respecto al plasma (≈ 300 mOsm/kg).`;
-      else msg = `<b>Hiperosmolal</b> respecto al plasma (≈ 300 mOsm/kg).`;
+      if (osmolal >= 270 && osmolal <= 330) {
+        msg = '<b>≈ isoosmolal con el plasma</b> (≈ 290–300 mOsm/kg).';
+        if (sel.value === 'nacl') msg += ' Con 9 g/L de NaCl obtienes el «suero fisiológico».';
+        if (sel.value === 'glucosa') msg += ' Con 50 g/L (glucosa al 5 %) obtienes el suero glucosado isotónico.';
+      } else if (osmolal < 270) {
+        msg = '<b>Hipoosmolal</b> respecto al plasma (≈ 290–300 mOsm/kg).';
+      } else {
+        msg = '<b>Hiperosmolal</b> respecto al plasma (≈ 290–300 mOsm/kg).';
+      }
+      if (sel.value === 'urea') msg += ' Ojo: la urea es osmóticamente <b>ineficaz</b>. Aunque su osmolalidad fuera la del plasma, no sería isotónica: para las células se comporta como agua pura (módulo 2).';
       if (sel.value === 'albumina') msg += ' Fíjate: decenas de g/L de proteína aportan apenas ~1 mOsm, pero muchas cargas (≈ 16 por molécula).';
       if (f < 1) msg += ` Con φ = ${fmt(f, 2)}, la molalidad supera a la molaridad en un ${fmt((1 / f - 1) * 100, 1)} %.`;
       msg += ' <span class="muted small">(Cálculo ideal: disociación total, sin coeficiente osmótico.)</span>';
@@ -514,7 +527,13 @@
     if (!ratioIn) return;
     const veIn = document.getElementById('vd-ve');
     const viIn = document.getElementById('vd-vi');
-    const ratio = () => (+ratioIn.value <= -1.99 ? 0 : Math.pow(10, +ratioIn.value));
+    // Presets keep their exact ratio; the log slider alone would round 40 to 39.8.
+    let exactRatio = null;
+    ratioIn.addEventListener('input', e => { if (e.isTrusted) exactRatio = null; });
+    const ratio = () => {
+      if (exactRatio !== null) return exactRatio;
+      return +ratioIn.value <= -1.99 ? 0 : Math.pow(10, +ratioIn.value);
+    };
     let bars = [17, 42, 17];
 
     const handle = themedChart(document.getElementById('vd-chart'), () => ({
@@ -558,6 +577,7 @@
     bindRange(viIn, update, v => fmt(v, 1));
     document.querySelectorAll('[data-vd]').forEach(b => b.addEventListener('click', () => {
       const r = +b.dataset.vd;
+      exactRatio = r;
       ratioIn.value = r === 0 ? -2 : Math.log10(r);
       ratioIn.dispatchEvent(new Event('input'));
     }));

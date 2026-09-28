@@ -176,11 +176,11 @@
             <table class="data">
               <thead><tr><th>pK<sub>A</sub> respecto al pH</th><th class="num">Disociación</th></tr></thead>
               <tbody>
-                <tr><td>pK = pH − 2 o menor</td><td class="num">&gt; 99 % (casi total)</td></tr>
+                <tr><td>pK ≤ pH − 2</td><td class="num">≥ 99 % (casi total)</td></tr>
                 <tr><td>pK = pH − 1</td><td class="num">≈ 91 %</td></tr>
                 <tr><td>pK = pH</td><td class="num">50 %</td></tr>
                 <tr><td>pK = pH + 1</td><td class="num">≈ 9 %</td></tr>
-                <tr><td>pK = pH + 2 o mayor</td><td class="num">&lt; 1 % (casi nula)</td></tr>
+                <tr><td>pK ≥ pH + 2</td><td class="num">≤ 1 % (casi nula)</td></tr>
               </tbody>
             </table>
           </div>
@@ -330,7 +330,7 @@
             <div class="widget-head"><span class="badge">Simulador</span><h3>¿Por qué el bicarbonato abierto es tan eficaz? (añade HCl a 1 L)</h3></div>
             <div class="widget-body">
               <p class="hint">Cinco soluciones a pH 7.40. A: sin tampón. B: bicarbonato cerrado (24/1.2). C: tampón A⁻/AH cerrado (48/12, pK 6.8). D: bicarbonato abierto (P<sub>CO₂</sub> fija en 40 mmHg). E: C + D.</p>
-              <div class="controls"><div class="ctrl"><label for="op-x">HCl añadido (mmol/L) <output for="op-x"></output></label><input type="range" id="op-x" min="0" max="20" step="0.5" value="9"></div></div>
+              <div class="controls"><div class="ctrl"><label for="op-x">HCl añadido (mmol/L) <output for="op-x"></output></label><input type="range" id="op-x" min="0.5" max="20" step="0.5" value="9"></div></div>
               <div class="chart-box"><canvas id="open-chart" aria-label="Comparación de tampones"></canvas></div>
               <div class="table-wrap"><table class="data" id="op-table"></table></div>
               <div class="verdict">Con el <b>bicarbonato cerrado</b> (B), cada H⁺ añadido crea un CO₂ que se acumula y acidifica. Con el <b>abierto</b> (D), ese CO₂ se va (el pulmón mantiene la P<sub>CO₂</sub>) y el cociente HCO₃⁻/CO₂d cae mucho menos. Si además se <b>baja</b> la P<sub>CO₂</sub> (hiperventilación: 25 mmHg con 9 mmol de HCl), el pH vuelve a 7.40: es la <b>compensación respiratoria</b>.</div>
@@ -606,8 +606,9 @@
             <div class="case-body">
               <p>La sangre venosa tiene ΔpH = −0.05 y ΔP<sub>CO₂</sub> = +5 mmHg respecto a la arterial (7.40 y 40).</p>
               <ol>
-                <li>La venosa solo ha recibido más ácido volátil: está en la <strong>misma recta de equilibrio</strong>, así que su concentración de ácidos fijos es <strong>igual</strong>.</li>
-                <li>Al subir por la recta hacia pH menor, el HCO₃⁻ venoso es <strong>ligeramente superior</strong> al arterial (el CO₂ añadido genera HCO₃⁻ y los tampones cerrados captan los H⁺).</li>
+                <li><strong>Bicarbonato venoso:</strong> 0.03 × 45 × 10<sup>7.35−6.1</sup> = 1.35 × 17.8 ≈ <strong>24.0 mmol/L</strong>, prácticamente <strong>igual</strong> al arterial (24).</li>
+                <li><strong>¿Solo CO₂?</strong> Si la sangre solo hubiera recibido ácido volátil, se movería por la recta de equilibrio (s ≈ 22–30). Con P<sub>CO₂</sub> 45, el pH bajaría solo ≈ 0.03–0.04 y el HCO₃⁻ subiría ≈ 1 mmol/L.</li>
+                <li><strong>Ácidos fijos:</strong> el punto venoso (pH 7.35; HCO₃⁻ 24) queda <strong>por debajo</strong> de la RNE, que a pH 7.35 vale ≈ 25–25.5 mmol/L. Su concentración de ácidos fijos es algo <strong>superior</strong> (≈ 1–1.5 mmol/L): los tejidos añaden a la sangre venosa CO₂ y también algo de ácido fijo, como el láctico. Por eso el estado ácido-base se evalúa siempre en sangre <strong>arterial</strong>.</li>
               </ol>
             </div>
           </details>
